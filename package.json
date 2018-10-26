@@ -1,0 +1,26 @@
+{
+  "name": "@pxblue/visualizations",
+  "version": "1.0.7",
+  "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pxblue/visualizations.git"
+  },
+  "keywords": [
+    "Highcharts",
+    "Visualization",
+    "PXBlue",
+    "Chart",
+    "Graph"
+  ],
+  "author": "pxblue <pxblue@eaton.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/pxblue/visualizations/issues"
+  },
+  "homepage": "https://github.com/pxblue/visualizations#readme"
+}
