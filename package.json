@@ -1,6 +1,6 @@
 {
   "name": "@pxblue/visualizations",
-  "version": "1.0.7",
+  "version": "1.0.0",
   "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
   "main": "index.js",
   "scripts": {
