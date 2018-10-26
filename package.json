@@ -1,5 +1,5 @@
 {
-  "name": "@pxblue/visualizations",
+  "name": "@pxblue/highcharts",
   "version": "1.0.0",
   "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/pxblue/visualizations.git"
+    "url": "git+https://github.com/pxblue/highcharts.git"
   },
   "keywords": [
     "Highcharts",
@@ -20,7 +20,7 @@
   "author": "pxblue <pxblue@eaton.com>",
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/pxblue/visualizations/issues"
+    "url": "https://github.com/pxblue/highchart/issues"
   },
-  "homepage": "https://github.com/pxblue/visualizations#readme"
+  "homepage": "https://github.com/pxblue/highcharts#readme"
 }
