@@ -1,4 +1,4 @@
-# Visualizations
+# Highcharts Configurations
 This package contains basic configuration settings for HighCharts line, pie, bar, and donut graphs for use with PX Blue. 
 
 ## Installation
@@ -38,6 +38,8 @@ import ReactHighcharts from 'react-highcharts';
 ...
 <ReactHighcharts config={lineSample}/>
 ```
+
+For more detailed instructions on using HighCharts in your application, see our demos for [Angular](https://stackblitz.com/edit/pxblue-highcharts-angular) or [React](https://stackblitz.com/edit/pxblue-highcharts-react).
 
 ## Advanced Usage
 When you are ready to build charts of your own, you can choose to extend one of the sample charts, or you can start from one of the base configurations. If you use the base configurations, your graphs will not draw (and your app may not even render) until you have supplied all of the requisite configuration information. Typically this means specifying a data source and configurations for the x and y axis.
