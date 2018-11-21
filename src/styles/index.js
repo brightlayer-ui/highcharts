@@ -12,23 +12,24 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
   pxblueColors: an array of pxblue 500 and 300 level colors
   sizes: an array of font sizes for various chart elements
 */
+import * as PXBColors from '@pxblue/colors';
 export const OpenSans = "Open Sans";
 
 export const pxblueColors = [ 
-    '#007bc1', // blue[500]
-    '#ca3c3d', // red[500]
-    '#39b620', // green[500]
-    '#983fef', // purple[500]
-    '#f47721', // orange[500]
-    '#f0aa1f', // gold[500]
-    '#f0cb2f', // yellow[500]
-    '#4da3d4', // blue[300]
-    '#da7777', // red[300]
-    '#74cc63', // green[300]
-    '#b779f4', // purple[300]
-    '#f7a064', // orange[300]
-    '#f5c462', // gold[300]
-    '#f5db6d'  // yellow[300]
+    PXBColors.blue[500],
+    PXBColors.red[500],
+    PXBColors.green[500],
+    PXBColors.purple[500],
+    PXBColors.orange[500],
+    PXBColors.gold[500],
+    PXBColors.yellow[500],
+    PXBColors.blue[300],
+    PXBColors.red[300],
+    PXBColors.green[300],
+    PXBColors.purple[300],
+    PXBColors.orange[300],
+    PXBColors.gold[300],
+    PXBColors.yellow[300]
 ];
 
 export const sizes = {

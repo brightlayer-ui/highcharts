@@ -53,7 +53,7 @@ export function getRandomData(scale, balanced = true, count = 20, timeseries = f
   rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
 */
 export function sharedTooltipFormatter(context, units = [], rounding = []){
-  let s = '<div style="padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'"><table>';
+  let s = '<div style="min-width: 100px; padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'"><table>';
   for(let i = 0; i < context.points.length; i++){
     s += '<tr>'+
         '<td style="padding:0"><b>' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + '<span style="color: '+context.points[i].series.color+'">' + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>'
