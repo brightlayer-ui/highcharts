@@ -1,26 +1,26 @@
 # Highcharts Configurations
-This package contains basic configuration settings for HighCharts line, pie, bar, and donut graphs for use with PX Blue. 
+This package contains basic support for basic HighCharts line, pie, bar, and donut graphs for use with PX Blue. 
 
 ## Installation
 Install with npm
 ```
-npm install --save @pxblue/visualizations
+npm install --save @pxblue/highcharts
 ```
 or yarn
 ```
-yarn add @pxblue/visualizations
+yarn add @pxblue/highcharts
 ```
 
 ## Basic Usage
-The fastest way to use these configurations is to load one (or more) of the sample graphs.
+To use this library, import the chart generator functions from the package:
 
 ```
 import { 
-    lineSample, 
-    pieSample, 
-    donutSample, 
-    barSample 
-} from '@pxblue/visualizations/highcharts/samples'; 
+    createLineGraph, 
+    createPieGraph, 
+    createDonutGraph, 
+    createBarGraph 
+} from '@pxblue/highcharts'; 
 ```
 
 and then use them as placeholders in your application.
@@ -29,39 +29,40 @@ For Angular:
 ```
 import { Chart } from 'angular-highcharts';
 ...
-let lineChart = new Chart(lineSample);
+let lineChart = new Chart(createLineGraph());
 ```
 
 For React:
 ```
 import ReactHighcharts from 'react-highcharts';
 ...
-<ReactHighcharts config={lineSample}/>
+<ReactHighcharts config={createLineGraph()}/>
 ```
+This will use the default sample data to render a chart in your application. Read the following section for instructions on specifying your own configuration/data.
 
 For more detailed instructions on using HighCharts in your application, see our demos for [Angular](https://stackblitz.com/edit/pxblue-highcharts-angular) or [React](https://stackblitz.com/edit/pxblue-highcharts-react).
 
 ## Advanced Usage
-When you are ready to build charts of your own, you can choose to extend one of the sample charts, or you can start from one of the base configurations. If you use the base configurations, your graphs will not draw (and your app may not even render) until you have supplied all of the requisite configuration information. Typically this means specifying a data source and configurations for the x and y axis.
-
-In order to extend the basic configuration objects, you will need to make a clone of the object and then you will be able to directly manipulate the various properties. We recommend you use [lodash.clonedeep](https://www.npmjs.com/package/lodash.clonedeep) to simplify this process. If you do not properly deep clone the object, you may end up with shared references and changes being applied in certain places you do not intend.
+When you are ready to customize charts of your own, you can pass a configuration object into the chart generator functions. 
 
 ```
-import { pieBaseConfig } from '@pxblue/visualizations/highcharts';
-import clonedeep from 'lodash.clonedeep';
+import { createPieChart } from '@pxblue/highcharts';
 ...
-let myPieConfig = clonedeep(pieBaseConfig);
-myPie.series = [{
-    name: 'Browsers',
-    data: [
-        { name: 'Chrome', y: 61.41 }, 
-        { name: 'Internet Explorer', y: 11.84 }, 
-        { name: 'Firefox', y: 10.85 }
-    ]
-}];
+let myPieConfig = {
+    series: [{
+        name: 'Browsers',
+        data:[
+            {name: 'Chrome', y: 61.41},
+            { name: 'Internet Explorer', y: 11.84 }, 
+            { name: 'Firefox', y: 10.85 }
+        ]
+    }],
+    colors: ['red', 'orange', 'yellow']
+};
+let myChart = createPieChart(myPieConfig);
 ```
+This configuration object will accept any property than can be supplied to a standard Highcharts config object ([API Reference](https://api.highcharts.com/highcharts/)). Additionally, you may supply a ```colors``` property which is an array of colors to be used in the chart.
 
-Please refer to the [Highcharts API](https://api.highcharts.com/highcharts/) for more information about all of the properties that you can specify as part of your chart configuration.
 
 ## Additional Utilities
 This package also includes several utility functions and style variables to make it easier for users to customize certain parts of the chart configuration. Specific documentation for these functions/variables can be found in the source files.
@@ -71,12 +72,12 @@ import {
     OpenSans,       
     pxblueColors,
     sizes
-} from '@pxblue/visualizations/styles';
+} from '@pxblue/highcharts/styles';
 
 import {
     getRandomData,       
     sharedTooltipFormatter,
-    sharedTimeTooltipormatter,
+    sharedTimeTooltipFormatter,
     simpleTooltipFormatter
-} from '@pxblue/visualizations/utilities';
+} from '@pxblue/highcharts/utilities';
 ```

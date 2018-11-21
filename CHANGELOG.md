@@ -3,7 +3,7 @@
 ### v1.1.0
 Significant improvements to the way we generate charts:
 * We now expose chart generator functions, rather than sample config objects
-* These generator functions accept a configuration object that supports any Highcharts oconfiguration properties
+* These generator functions accept a configuration object that supports any Highcharts configuration properties
 * If required data is missing, sample data will be injected automatically
 * Leaving the config object blank will generate a complete sample chart that can be used as a placeholder
 
