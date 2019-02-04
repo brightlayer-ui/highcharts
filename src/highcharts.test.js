@@ -1,7 +1,6 @@
 import { createBarChart, createLineChart, createPieChart, createDonutChart } from './index';
 
 test('helper functions return object', () => {
-    let x = createBarChart();
     expect(createBarChart()).toBeDefined();
     expect(createLineChart()).toBeDefined();
     expect(createPieChart()).toBeDefined();
