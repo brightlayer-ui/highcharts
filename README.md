@@ -1,4 +1,7 @@
 # Highcharts Configurations
+[![](https://img.shields.io/npm/v/@pxblue/highcharts.svg?label=@pxblue/highcharts&style=flat)](https://www.npmjs.com/package/@pxblue/highcharts)
+[![](https://img.shields.io/circleci/project/github/pxblue/highcharts/master.svg?style=flat)](https://circleci.com/gh/pxblue/highcharts/tree/master)
+
 This package contains basic support for basic HighCharts line, pie, bar, and donut graphs for use with PX Blue. 
 
 ## Installation
