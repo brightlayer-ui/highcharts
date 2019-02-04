@@ -4,7 +4,7 @@
   "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
   "main": "./dist/index.js",
   "scripts": {
-    "test:build": "./buildTest.js",
+    "test:build": "./buildTest.sh",
     "test": "jest",
     "build": "babel src --presets=@babel/preset-env --out-dir dist"
   },
