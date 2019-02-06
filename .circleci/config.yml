@@ -9,8 +9,11 @@ jobs:
           name: Install Dependencies
           command: yarn
       - run:
+          name: Test
+          command: yarn test
+      - run:
           name: Build Package
           command: yarn build
       - run:
           name: Verify Artifacts
-          command: yarn test
+          command: yarn test:build
