@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 // @ts-ignore
 import ReactHighcharts from 'react-highcharts';
 
@@ -19,16 +19,16 @@ const App: React.FC = () => {
    return (
       <div>
          <div style={{height: '200px'}}>
-            <ReactHighcharts config={createPieChart()}/>
+            <ReactHighcharts config={createPieChart()} domProps={{style:{height: '100%'}}}/>
          </div>
          <div style={{height: '300px'}}>
-            <ReactHighcharts config={createDonutChart(mainConfig)}/>
+            <ReactHighcharts config={createDonutChart(mainConfig)} domProps={{style:{height: '100%'}}}/>
          </div>
          <div style={{height: '400px'}}>
-            <ReactHighcharts config={createLineChart(lineConfig)}/>
+            <ReactHighcharts config={createLineChart(lineConfig)} domProps={{style:{height: '100%'}}}/>
          </div>
          <div style={{height: '400px'}}>
-            <ReactHighcharts config={createBarChart(mainConfig)}/>
+            <ReactHighcharts config={createBarChart(mainConfig)} domProps={{style:{height: '100%'}}}/>
          </div>
       </div>
    );
