@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "build": "babel src --presets=@babel/preset-env --out-dir dist",
-    "test": "./buildTest.sh",
+    "test": "jest",
+    "test:build": "./buildTest.sh",
     "build:react": "cd react-demo && yarn build && cd ..",
     "build:angular": "cd angular-demo && yarn build && cd ..",
     "build:all": "yarn build:react && yarn build:angular",
