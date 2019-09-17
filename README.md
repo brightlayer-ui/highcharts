@@ -39,7 +39,7 @@ import ReactHighcharts from 'react-highcharts';
 ```
 This will use the default sample data to render a chart in your application. Read the following section for instructions on specifying your own configuration/data.
 
-For more detailed instructions on using HighCharts in your application, see our demos for [Angular](https://stackblitz.com/edit/pxblue-highcharts-angular) or [React](https://stackblitz.com/edit/pxblue-highcharts-react).
+For more detailed instructions on using HighCharts in your application, see our demos for [Angular](https://stackblitz.com/github/pxblue/highcharts/tree/master/angular-demo) or [React](https://codesandbox.io/s/github/pxblue/highcharts/tree/master/react-demo).
 
 ## Advanced Usage
 When you are ready to customize charts of your own, you can pass a configuration object into the chart generator functions. 
