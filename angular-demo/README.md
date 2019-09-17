@@ -7,7 +7,7 @@ This is a sample application demonstrating the PXBlue Highcharts library.
 ```
 git clone https://github.com/pxblue/highcharts
 yarn install
-cd demo-angular
+cd angular-demo
 yarn install
 yarn start
 ```
