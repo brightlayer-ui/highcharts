@@ -5,6 +5,9 @@
 **/**/node_modules
 package-lock.json
 
+# development
+/react-demo/build
+
 # testing
 /coverage
 
@@ -18,7 +21,9 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
-.idea/
+/.idea
+/dist
+**/dist
 
 npm-debug.log*
 yarn-debug.log*

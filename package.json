@@ -2,24 +2,36 @@
   "name": "@pxblue/highcharts",
   "version": "1.1.1",
   "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
-  "main": "./dist/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "package.json",
+    "LICENSE",
+    "README.md"
+  ],
   "scripts": {
-    "test:build": "./buildTest.sh",
-    "test": "jest",
-    "build": "babel src --presets=@babel/preset-env --out-dir dist"
+    "build": "babel src --presets=@babel/preset-env --out-dir dist",
+    "test": "./buildTest.sh",
+    "build:react": "cd react-demo && yarn build && cd ..",
+    "build:angular": "cd angular-demo && yarn build && cd ..",
+    "build:all": "yarn build:react && yarn build:angular",
+    "publish:full": "yarn build:all && npm version patch && npm publish",
+    "linkscript": "./link.sh",
+    "start:angular": "yarn linkscript && cd angular-demo && yarn start",
+    "start:react": "yarn linkscript && cd react-demo && yarn start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pxblue/highcharts.git"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@pxblue/colors": "^1.0.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.2",
     "@babel/core": "^7.1.2",
     "@babel/preset-env": "^7.1.0",
-    "@pxblue/colors": "^1.0.9",
     "babel-jest": "^24.0.0",
     "babel-polyfill": "^6.26.0",
     "jest": "^24.0.0"
