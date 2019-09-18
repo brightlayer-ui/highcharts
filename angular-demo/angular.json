@@ -77,7 +77,7 @@
               "browserTarget": "demo-angular:build:production"
             },
             "es5": {
-              "browserTarget": "pxblue-chartjs:build:es5"
+              "browserTarget": "demo-angular:build:es5"
             }
           }
         },
