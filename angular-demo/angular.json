@@ -28,6 +28,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@pxblue/themes/angular/theme.scss",
+              "./node_modules/typeface-open-sans",
               "src/styles.scss"
             ],
             "scripts": []
@@ -99,6 +101,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@pxblue/themes/angular/theme.scss",
+              "./node_modules/typeface-open-sans",
               "src/styles.scss"
             ],
             "scripts": []
