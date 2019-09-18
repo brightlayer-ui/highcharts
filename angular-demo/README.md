@@ -6,10 +6,8 @@ This is a sample application demonstrating the PXBlue Highcharts library.
 ## Running the Example
 ```
 git clone https://github.com/pxblue/highcharts
-yarn install
-cd angular-demo
-yarn install
-yarn start
+cd highcharts
+yarn start:angular
 ```
 > **NOTE**: running the demo will use the latest src files from the repository and NOT the themes that are published on NPM.
 

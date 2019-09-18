@@ -33,6 +33,9 @@
             "scripts": []
           },
           "configurations": {
+            "es5": {
+              "tsConfig": "./tsconfig.es5.json"
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -72,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "demo-angular:build:production"
+            },
+            "es5": {
+              "browserTarget": "pxblue-chartjs:build:es5"
             }
           }
         },
