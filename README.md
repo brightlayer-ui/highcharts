@@ -5,7 +5,11 @@
 This package contains basic support for basic HighCharts line, pie, bar, and donut graphs for use with PX Blue. 
 
 ## Installation
-Install with yarn:
+Install with npm:
+```
+npm install --save @pxblue/highcharts
+```
+or yarn
 ```
 yarn add @pxblue/highcharts
 ```
