@@ -8,6 +8,7 @@
 # development
 /react-demo/build
 /angular-demo/build
+/angular-demo/dist
 # testing
 /coverage
 
@@ -22,8 +23,6 @@ Thumbs.db
 .env.test.local
 .env.production.local
 /.idea
-/dist
-**/dist
 
 npm-debug.log*
 yarn-debug.log*
