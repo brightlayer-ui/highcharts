@@ -14,10 +14,6 @@
     "build": "babel src --presets=@babel/preset-env --out-dir dist",
     "test": "jest",
     "test:build": "bash ./buildTest.sh",
-    "build:react": "cd react-demo && yarn build && cd ..",
-    "build:angular": "cd angular-demo && yarn build && cd ..",
-    "build:all": "yarn build:react && yarn build:angular",
-    "publish:full": "yarn build:all && npm version patch && npm publish",
     "linkscript": "bash ./link.sh",
     "start:angular": "yarn linkscript && cd angular-demo && yarn start",
     "start:react": "yarn linkscript && cd react-demo && yarn start"
