@@ -1,7 +1,7 @@
 # Highcharts Demo
 This is a sample application demonstrating the PXBlue Highcharts library.
 
-[View on CodeSandbox](https://codesandbox.io/s/github/pxblue/highcharts/tree/master/demo-react)
+[View on CodeSandbox](https://codesandbox.io/s/github/pxblue/highcharts/tree/master/react-demo)
 
 ## Running the Example
 ```
