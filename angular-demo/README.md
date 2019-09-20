@@ -1,7 +1,7 @@
 # Highcharts Demo
 This is a sample application demonstrating the PXBlue Highcharts library.
 
-[View on Stackblitz](https://stackblitz.com/github/pxblue/highcharts/tree/master/demo-angular)
+[View on Stackblitz](https://stackblitz.com/github/pxblue/highcharts/tree/master/angular-demo)
 
 ## Running the Example
 ```
