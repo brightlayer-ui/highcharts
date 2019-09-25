@@ -3,8 +3,12 @@
 # dependencies
 /node_modules
 **/**/node_modules
-package-lock.json
+**/**/package-lock.json
 
+# development
+/react-demo/build
+/angular-demo/build
+/angular-demo/dist
 # testing
 /coverage
 
@@ -18,6 +22,7 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
+/.idea
 
 npm-debug.log*
 yarn-debug.log*
