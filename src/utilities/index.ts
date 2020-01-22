@@ -16,10 +16,10 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 */
 
 import { sizes } from '../styles';
-import * as Highcharts from 'highcharts'
+import * as Highcharts from 'highcharts';
 
 // timestamp used as a starting point for randomized time-series data
-const startTime = (new Date()).getTime();
+const startTime = new Date().getTime();
 const contextErrorMessage = 'Error: No context.points.';
 
 /*
@@ -30,22 +30,27 @@ const contextErrorMessage = 'Error: No context.points.';
   count: (Number) the number of data points to generate
   timeseries: (Boolean) if true, the x-values will be timestamps
 */
-export function getRandomData(scale: number, balanced = true, count = 20, timeseries = false) {
-  // generate an array of random data
-  var data = [], i;
+export function getRandomData(
+    scale: number,
+    balanced = true,
+    count = 20,
+    timeseries = false
+): Array<number | { x: number; y: number }> {
+    // generate an array of random data
+    const data = [];
+    let i;
 
-  for (i = 0; i < count; i++) {
-    if(timeseries){
-        data.push({
-            x: startTime + i * 1000,
-            y: (Math.random() - (balanced ? 0.5 : 0)) * scale
-        });
+    for (i = 0; i < count; i++) {
+        if (timeseries) {
+            data.push({
+                x: startTime + i * 1000,
+                y: (Math.random() - (balanced ? 0.5 : 0)) * scale,
+            });
+        } else {
+            data.push((Math.random() - (balanced ? 0.5 : 0)) * scale);
+        }
     }
-    else{
-        data.push((Math.random() - (balanced ? 0.5 : 0) )* scale);
-    }
-  }
-  return data;
+    return data;
 }
 
 /*
@@ -54,43 +59,28 @@ export function getRandomData(scale: number, balanced = true, count = 20, timese
   units: (Array<String>) an array of units to append (one per series)
   rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
 */
-export function sharedTooltipFormatter (context: Highcharts.TooltipFormatterContextObject, units: string[] = [], rounding: number[] = []) {
-  let s = '<div style="min-width: 100px; padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'"><table>';
+export function sharedTooltipFormatter(
+    context: Highcharts.TooltipFormatterContextObject,
+    units: string[] = [],
+    rounding: number[] = []
+): string {
+    let s = `<div style="min-width: 100px; padding: 4px; font-family: Open Sans; font-size: ${sizes.tooltip}"><table>`;
 
-  if (context.points) {
-    for(let i = 0; i < context.points.length; i++){
-      s += '<tr>'+
-          '<td style="padding:0"><b>' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + '<span style="color: '+context.points[i].color+'">' + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>';
-    } 
-  } else {
-    s += contextErrorMessage;
-  }
-
-  s += '</table><span>' + context.x + '</span></div>';
-  
-  return s;
-}
-
-/*
-  returns an HTML string for the tooltip of a shared tooltip
-
-  units: (Array<String>) an array of units to append (one per series)
-  rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
-*/
-export function sharedTimeTooltipFormatter(context: Highcharts.TooltipFormatterContextObject, units: string[] = [], rounding: number[] = []): string{
-  let s = '<div style="padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'"><table>';
-
-  if (context.points) {
-    for(let i = 0; i < context.points.length; i++){
-      s += '<tr>'+
-          '<td style="padding:0"><b>' + '<span style="color: '+context.points[i].color+'">' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>';
+    if (context.points) {
+        for (let i = 0; i < context.points.length; i++) {
+            s += `${'<tr>' + '<td style="padding:0"><b>'}${context.points[i].y.toFixed(
+                rounding.length > 0 ? rounding[i] : 3
+            )}<span style="color: ${context.points[i].color}">${
+                units.length > 0 ? ` ${units[i]}` : ''
+            }</span></b></td></tr>`;
+        }
+    } else {
+        s += contextErrorMessage;
     }
-  } else {
-    s += contextErrorMessage;
-  }
-  
-  s += '</table><span>' + (new Date(context.x)).toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', second: '2-digit'}) + '</span></div>';
-  return s;
+
+    s += `</table><span>${context.x}</span></div>`;
+
+    return s;
 }
 
 /*
@@ -99,13 +89,51 @@ export function sharedTimeTooltipFormatter(context: Highcharts.TooltipFormatterC
   units: (Array<String>) an array of units to append (one per series)
   rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
 */
-export function simpleTooltipFormatter(context: Highcharts.TooltipFormatterContextObject, units = '', rounding = 2): string{
-  return '<div style="padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'">'+
-            '<table>'+
-              '<tr>' +
-                '<td style="padding:0; color: ' + context.point.color + '">' + context.point.name + ':</td>'+
-                '<td><b>' + context.y.toFixed(rounding) + (units ? ' ' + units : '') + '</b></td>'+
-              '</tr>' +
-            '</table>'+
-          '</div>';
+export function sharedTimeTooltipFormatter(
+    context: Highcharts.TooltipFormatterContextObject,
+    units: string[] = [],
+    rounding: number[] = []
+): string {
+    let s = `<div style="padding: 4px; font-family: Open Sans; font-size: ${sizes.tooltip}"><table>`;
+
+    if (context.points) {
+        for (let i = 0; i < context.points.length; i++) {
+            s += `${'<tr>' + '<td style="padding:0"><b>' + '<span style="color: '}${
+                context.points[i].color
+            }">${context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) +
+                (units.length > 0 ? ` ${units[i]}` : '')}</span></b></td></tr>`;
+        }
+    } else {
+        s += contextErrorMessage;
+    }
+
+    s += `</table><span>${new Date(context.x).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    })}</span></div>`;
+    return s;
+}
+
+/*
+  returns an HTML string for the tooltip of a shared tooltip
+
+  units: (Array<String>) an array of units to append (one per series)
+  rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
+*/
+export function simpleTooltipFormatter(
+    context: Highcharts.TooltipFormatterContextObject,
+    units = '',
+    rounding = 2
+): string {
+    return (
+        `<div style="padding: 4px; font-family: Open Sans; font-size: ${sizes.tooltip}">` +
+        `<table>` +
+        `<tr>` +
+        `<td style="padding:0; color: ${context.point.color}">${context.point.name}:</td>` +
+        `<td><b>${context.y.toFixed(rounding)}${units ? ` ${units}` : ''}</b></td>` +
+        `</tr>` +
+        `</table>` +
+        `</div>`
+    );
 }

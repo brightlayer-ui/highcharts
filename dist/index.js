@@ -215,7 +215,7 @@ exports.createLineChart = function (_a) {
 exports.createBarChart = function (_a) {
     if (_a === void 0) { _a = {}; }
     var chart = _a.chart, title = _a.title, subtitle = _a.subtitle, tooltip = _a.tooltip, plotOptions = _a.plotOptions, series = _a.series, legend = _a.legend, colors = _a.colors, xAxis = _a.xAxis, yAxis = _a.yAxis, other = __rest(_a, ["chart", "title", "subtitle", "tooltip", "plotOptions", "series", "legend", "colors", "xAxis", "yAxis"]);
-    return __assign({ chart: Object.assign({
+    return (__assign({ chart: Object.assign({
             type: 'column'
         }, chart), colors: colors || styles_1.pxblueColors, credits: {
             enabled: false
@@ -280,7 +280,7 @@ exports.createBarChart = function (_a) {
                     format: "{value}"
                 },
                 alternateGridColor: 'rgba(0,0,0,0.04)'
-            }] }, other);
+            }] }, other));
 };
 exports.createDonutChart = function (_a) {
     if (_a === void 0) { _a = {}; }
@@ -304,21 +304,16 @@ exports.createDonutChart = function (_a) {
             };
         }
     };
-    return {
-        chart: Object.assign({
+    return __assign({ chart: Object.assign({
             type: 'pie',
             spacing: [0, 0, 0, 0]
-        }, chart),
-        title: Object.assign({
+        }, chart), title: Object.assign({
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title }
-        }, title),
-        subtitle: Object.assign({
+        }, title), subtitle: Object.assign({
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle }
-        }, subtitle),
-        tooltip: Object.assign(_tooltip, tooltip),
-        plotOptions: Object.assign({
+        }, subtitle), tooltip: Object.assign(_tooltip, tooltip), plotOptions: Object.assign({
             series: {
                 states: {
                     hover: {
@@ -336,14 +331,12 @@ exports.createDonutChart = function (_a) {
                 innerSize: '75%',
                 size: '100%'
             }
-        }, plotOptions),
-        legend: Object.assign({
+        }, plotOptions), legend: Object.assign({
             enabled: true,
             itemStyle: {
                 fontFamily: styles_1.OpenSans
             }
-        }, legend),
-        series: series || [{
+        }, legend), series: series || [{
                 name: 'Browsers',
                 showInLegend: false,
                 colors: colors || styles_1.pxblueColors,
@@ -358,9 +351,7 @@ exports.createDonutChart = function (_a) {
                         name: 'Device 1',
                         y: 10.85
                     }]
-            }],
-        credits: {
+            }], credits: {
             enabled: false
-        }
-    };
+        } }, other);
 };

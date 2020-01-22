@@ -10,6 +10,7 @@
     "LICENSE",
     "README.md"
   ],
+  "prettier": "@pxblue/prettier-config",
   "scripts": {
     "build": "yarn && tsc",
     "test": "jest",
@@ -18,7 +19,8 @@
     "start:angular": "yarn linkscript && cd angular-demo && yarn start",
     "start:react": "yarn linkscript && cd react-demo && yarn start",
     "lint": "eslint \"src/**/**.{tsx,ts}\"",
-    "lint:fix": "eslint \"src/**/**.{tsx,ts}\" --fix"
+    "lint:fix": "eslint \"src/**/**.{tsx,ts}\" --fix",
+    "prettier": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
   },
   "devDependencies": {
     "@pxblue/eslint-config": "^1.1.2",
+    "@pxblue/prettier-config": "^1.0.2",
     "@types/jest": "^24.9.0",
     "@typescript-eslint/eslint-plugin": "^2.17.0",
     "@typescript-eslint/parser": "^2.17.0",
@@ -36,8 +39,9 @@
     "eslint-config-prettier": "^6.9.0",
     "eslint-plugin-react": "^7.18.0",
     "highcharts": "^7.2.0",
-    "jest": "^24.0.0",
-    "typescript": "^3.7.3"
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
   },
   "peerDependencies": {
     "highcharts": "^7.2.0"
