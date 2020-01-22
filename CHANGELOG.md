@@ -1,4 +1,6 @@
 # Recent Changes
+### v2.0.0
+Library converted to TypeScript to provide strong typings for TS projects. This will continue to work for plain JavaScript projects without any changes necessary.
 
 ### v1.1.0
 Significant improvements to the way we generate charts:
