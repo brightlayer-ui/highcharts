@@ -8,7 +8,8 @@
     "dist/",
     "package.json",
     "LICENSE",
-    "README.md"
+    "README.md",
+    "CHANGELOG.md"
   ],
   "prettier": "@pxblue/prettier-config",
   "scripts": {
