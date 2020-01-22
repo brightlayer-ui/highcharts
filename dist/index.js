@@ -41,6 +41,13 @@ exports.createPieChart = function (_a) {
     if (_a === void 0) { _a = {}; }
     var _b, _c, _d, _e, _f;
     var chart = _a.chart, title = _a.title, subtitle = _a.subtitle, tooltip = _a.tooltip, plotOptions = _a.plotOptions, series = _a.series, legend = _a.legend, colors = _a.colors, other = __rest(_a, ["chart", "title", "subtitle", "tooltip", "plotOptions", "series", "legend", "colors"]);
+    var _tooltip = {
+        useHTML: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.useHTML) || true,
+        backgroundColor: ((_c = tooltip) === null || _c === void 0 ? void 0 : _c.backgroundColor) || 'white',
+        borderColor: ((_d = tooltip) === null || _d === void 0 ? void 0 : _d.borderColor) || 'transparent',
+        borderRadius: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.borderRadius) || 0,
+        formatter: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.formatter) || function () { return utilities_1.simpleTooltipFormatter(this, '', 2); }
+    };
     return __assign({ chart: Object.assign({
             type: 'pie',
             spacing: [0, 0, 0, 0]
@@ -52,13 +59,7 @@ exports.createPieChart = function (_a) {
             text: '',
             align: 'left',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle }
-        }, subtitle), tooltip: {
-            useHTML: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.useHTML) || true,
-            backgroundColor: ((_c = tooltip) === null || _c === void 0 ? void 0 : _c.backgroundColor) || 'white',
-            borderColor: ((_d = tooltip) === null || _d === void 0 ? void 0 : _d.borderColor) || 'transparent',
-            borderRadius: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.borderRadius) || 0,
-            formatter: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.formatter) || function () { return utilities_1.simpleTooltipFormatter(this, '', 2); }
-        }, plotOptions: Object.assign({
+        }, subtitle), tooltip: Object.assign(_tooltip, tooltip), plotOptions: Object.assign({
             series: {
                 states: {
                     hover: {
@@ -120,6 +121,16 @@ exports.createLineChart = function (_a) {
     if (_a === void 0) { _a = {}; }
     var _b, _c, _d, _e, _f, _g, _h, _j;
     var chart = _a.chart, title = _a.title, subtitle = _a.subtitle, tooltip = _a.tooltip, plotOptions = _a.plotOptions, series = _a.series, legend = _a.legend, colors = _a.colors, xAxis = _a.xAxis, yAxis = _a.yAxis, other = __rest(_a, ["chart", "title", "subtitle", "tooltip", "plotOptions", "series", "legend", "colors", "xAxis", "yAxis"]);
+    var _tooltip = {
+        valueSuffix: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.valueSuffix) || undefined,
+        backgroundColor: ((_c = tooltip) === null || _c === void 0 ? void 0 : _c.backgroundColor) || 'white',
+        borderColor: ((_d = tooltip) === null || _d === void 0 ? void 0 : _d.borderColor) || 'transparent',
+        borderRadius: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.borderRadius) || 0,
+        style: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.style) || { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip },
+        useHTML: ((_g = tooltip) === null || _g === void 0 ? void 0 : _g.useHTML) || true,
+        formatter: ((_h = tooltip) === null || _h === void 0 ? void 0 : _h.formatter) || function () { return utilities_1.sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]); },
+        shared: ((_j = tooltip) === null || _j === void 0 ? void 0 : _j.shared) || true
+    };
     return __assign({ chart: Object.assign({
             type: 'line',
             zoomType: 'xy',
@@ -168,16 +179,7 @@ exports.createLineChart = function (_a) {
         }, subtitle), title: Object.assign({
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title }
-        }, title), tooltip: {
-            valueSuffix: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.valueSuffix) || undefined,
-            backgroundColor: ((_c = tooltip) === null || _c === void 0 ? void 0 : _c.backgroundColor) || 'white',
-            borderColor: ((_d = tooltip) === null || _d === void 0 ? void 0 : _d.borderColor) || 'transparent',
-            borderRadius: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.borderRadius) || 0,
-            style: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.style) || { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip },
-            useHTML: ((_g = tooltip) === null || _g === void 0 ? void 0 : _g.useHTML) || true,
-            formatter: ((_h = tooltip) === null || _h === void 0 ? void 0 : _h.formatter) || function () { return utilities_1.sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]); },
-            shared: ((_j = tooltip) === null || _j === void 0 ? void 0 : _j.shared) || true
-        }, xAxis: xAxis || {
+        }, title), tooltip: Object.assign(_tooltip, tooltip), xAxis: xAxis || {
             type: 'datetime',
             tickPixelInterval: 80,
             alternateGridColor: 'rgba(0,0,0,0.04)',
@@ -212,7 +214,6 @@ exports.createLineChart = function (_a) {
 };
 exports.createBarChart = function (_a) {
     if (_a === void 0) { _a = {}; }
-    var _b;
     var chart = _a.chart, title = _a.title, subtitle = _a.subtitle, tooltip = _a.tooltip, plotOptions = _a.plotOptions, series = _a.series, legend = _a.legend, colors = _a.colors, xAxis = _a.xAxis, yAxis = _a.yAxis, other = __rest(_a, ["chart", "title", "subtitle", "tooltip", "plotOptions", "series", "legend", "colors", "xAxis", "yAxis"]);
     return __assign({ chart: Object.assign({
             type: 'column'
@@ -259,16 +260,7 @@ exports.createBarChart = function (_a) {
         }, subtitle), title: Object.assign({
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title },
-        }, title), tooltip: {
-            valueSuffix: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.valueSuffix) || undefined,
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip },
-            useHTML: true,
-            shared: true,
-            backgroundColor: 'white',
-            borderColor: 'transparent',
-            borderRadius: 0,
-            formatter: function () { return utilities_1.sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]); },
-        }, xAxis: xAxis || {
+        }, title), tooltip: __assign({ style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip }, useHTML: true, shared: true, backgroundColor: 'white', borderColor: 'transparent', borderRadius: 0, formatter: function () { return utilities_1.sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]); } }, tooltip), xAxis: xAxis || {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             title: {
                 style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisTitle },
@@ -292,8 +284,26 @@ exports.createBarChart = function (_a) {
 };
 exports.createDonutChart = function (_a) {
     if (_a === void 0) { _a = {}; }
-    var _b, _c, _d, _e, _f;
+    var _b;
     var chart = _a.chart, title = _a.title, subtitle = _a.subtitle, tooltip = _a.tooltip, plotOptions = _a.plotOptions, series = _a.series, legend = _a.legend, colors = _a.colors, other = __rest(_a, ["chart", "title", "subtitle", "tooltip", "plotOptions", "series", "legend", "colors"]);
+    var _tooltip = {
+        borderWidth: 0,
+        backgroundColor: 'none',
+        shadow: false,
+        style: {
+            fontSize: '16px'
+        },
+        headerFormat: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.headerFormat) || '',
+        pointFormat: '{point.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
+        positioner: function (labelWidth) {
+            return {
+                // @ts-ignore
+                x: (this.chart.chartWidth - labelWidth) / 2,
+                // @ts-ignore
+                y: (this.chart.plotHeight / 2) - 36
+            };
+        }
+    };
     return {
         chart: Object.assign({
             type: 'pie',
@@ -307,24 +317,7 @@ exports.createDonutChart = function (_a) {
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle }
         }, subtitle),
-        tooltip: {
-            borderWidth: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.borderWidth) || 0,
-            backgroundColor: ((_c = tooltip) === null || _c === void 0 ? void 0 : _c.backgroundColor) || 'none',
-            shadow: ((_d = tooltip) === null || _d === void 0 ? void 0 : _d.shadow) || false,
-            style: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.style) || {
-                fontSize: '16px'
-            },
-            headerFormat: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.headerFormat) || '',
-            pointFormat: '{point.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
-            positioner: function (labelWidth) {
-                return {
-                    // @ts-ignore
-                    x: (this.chart.chartWidth - labelWidth) / 2,
-                    // @ts-ignore
-                    y: (this.chart.plotHeight / 2) - 36
-                };
-            }
-        },
+        tooltip: Object.assign(_tooltip, tooltip),
         plotOptions: Object.assign({
             series: {
                 states: {

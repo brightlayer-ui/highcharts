@@ -20,7 +20,7 @@ test('pie chart parameters work', () => {
     expect(x.subtitle?.align).toEqual('left');
     expect(x.tooltip?.borderColor).toEqual('red');
     expect(x.plotOptions?.series?.states?.hover?.halo?.size).toEqual(20);
-    expect(x.series).toContainEqual({name: 'Test'});
+    expect(x.series).toEqual([{name: 'Test', type: 'pie'}]);
     expect(x.series?.length).toEqual(1);
     expect(x.legend?.enabled).toEqual(false);
 });
@@ -42,11 +42,11 @@ test('line chart parameters work', () => {
     expect(x.subtitle?.align).toEqual('left');
     expect(x.tooltip?.borderColor).toEqual('red');
     expect(x.plotOptions?.series?.states?.hover?.enabled).toEqual(false);
-    expect(x.series).toContainEqual({name: 'Test'});
+    expect(x.series).toEqual([{name: 'Test', type: "line"}]);
     expect(x.series?.length).toEqual(1);
     expect(x.legend?.enabled).toEqual(false);
-    expect((<Highcharts.XAxisOptions>(x.xAxis)).title?.text).toEqual('test');
-    expect((<Highcharts.YAxisOptions>(x.yAxis)).labels?.format).toEqual('{value}');
+    expect(x.xAxis?.title?.text).toEqual('test');
+    expect(x.yAxis?.labels?.format).toEqual('{value}');
 
 });
 
@@ -67,7 +67,7 @@ test('bar chart parameters work', () => {
     expect(x.subtitle?.align).toEqual('left');
     expect(x.tooltip?.borderColor).toEqual('red');
     expect(x.plotOptions?.series?.states?.hover?.enabled).toEqual(false);
-    expect(x.series).toContainEqual({name: 'Test'});
+    expect(x.series).toEqual([{name: 'Test', type: "column"}]);
     expect(x.series?.length).toEqual(1);
     expect(x.legend?.enabled).toEqual(false);
     expect((<Highcharts.XAxisOptions>(x.xAxis)).title?.text).toEqual('test');
@@ -87,7 +87,7 @@ test('donut chart parameters work', () => {
     expect(x.subtitle?.align).toEqual('left');
     expect(x.tooltip?.borderColor).toEqual('red');
     expect(x.plotOptions?.series?.states?.hover?.enabled).toEqual(false);
-    expect(x.series).toContainEqual({name: 'Test'});
+    expect(x.series).toEqual([{name: 'Test', type: 'pie'}]);
     expect(x.series?.length).toEqual(1);
     expect(x.legend?.enabled).toEqual(false);
 });
