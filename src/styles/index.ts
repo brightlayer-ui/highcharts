@@ -15,7 +15,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 import * as PXBColors from '@pxblue/colors';
 export const OpenSans = "Open Sans";
 
-export const pxblueColors = [ 
+export const pxblueColors: string[] = [ 
     PXBColors.blue[500],
     PXBColors.red[500],
     PXBColors.green[500],
@@ -37,5 +37,5 @@ export const sizes = {
     subtitle: '1.1em',
     axisTitle: '1em',
     axisLabel: '.8em',
-    tootlip: '1em'
+    tooltip: '1em'
 }

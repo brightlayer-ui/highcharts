@@ -26,7 +26,9 @@ import {
   simpleTooltipFormatter
 } from './utilities';
 
-export const createPieChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, ...other } = {}) => {
+import * as Highcharts from 'highcharts';
+
+export const createPieChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, ...other }: Highcharts.Options = {}): Highcharts.Options => {
   return {
     chart: Object.assign(
       {
@@ -51,16 +53,14 @@ export const createPieChart = ({ chart, title, subtitle, tooltip, plotOptions, s
       },
       subtitle
     ),
-    tooltip: Object.assign(
+    tooltip: 
       {
-        useHTML: true,
-        backgroundColor: 'white',
-        borderColor: 'transparent',
-        borderRadius: 0,
-        formatter: function () { return simpleTooltipFormatter(this, '', 2) }
+        useHTML: tooltip?.useHTML || true,
+        backgroundColor: tooltip?.backgroundColor || 'white',
+        borderColor: tooltip?.borderColor || 'transparent',
+        borderRadius: tooltip?.borderRadius || 0,
+        formatter: tooltip?.formatter || function (): string { return simpleTooltipFormatter(this, '', 2) }
       },
-      tooltip
-    ),
     plotOptions: Object.assign(
       {
         series: {
@@ -94,6 +94,7 @@ export const createPieChart = ({ chart, title, subtitle, tooltip, plotOptions, s
     series: series || [{
       name: 'Browsers',
       colors: colors || pxblueColors,
+      type: 'pie',
       data: [{
         name: 'Chrome',
         y: 61.41
@@ -129,9 +130,8 @@ export const createPieChart = ({ chart, title, subtitle, tooltip, plotOptions, s
     ...other
   }
 }
-export const createLineChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, xAxis, yAxis, useUTC, ...other } = {}) => {
+export const createLineChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, xAxis, yAxis, ...other }:Highcharts.Options = {}): Highcharts.Options => {
   return {
-    useUTC: useUTC || false,
     chart: Object.assign({
       type: 'line',
       zoomType: 'xy',
@@ -165,17 +165,20 @@ export const createLineChart = ({ chart, title, subtitle, tooltip, plotOptions, 
     series: series || [{
       name: 'Device 3',
       yAxis: 0,
-      data: getRandomData(500, false, 30, true)
+      data: getRandomData(500, false, 30, true),
+      type: 'line'
     },
     {
       name: 'Device 2',
       yAxis: 0,
-      data: getRandomData(100, true, 30, true)
+      data: getRandomData(100, true, 30, true),
+      type: 'line'
     },
     {
       name: 'Device 1',
       yAxis: 0,
-      data: getRandomData(100, true, 30, true)
+      data: getRandomData(100, true, 30, true),
+      type: 'line'
     }],
     subtitle: Object.assign({
       text: '',
@@ -185,16 +188,16 @@ export const createLineChart = ({ chart, title, subtitle, tooltip, plotOptions, 
       text: '',
       style: { 'font-family': OpenSans, 'font-size': sizes.title }
     }, title),
-    tooltip: Object.assign({
-      valueSuffix: null,
-      backgroundColor: 'white',
-      borderColor: 'transparent',
-      borderRadius: 0,
-      style: { 'font-family': OpenSans, 'font-size': sizes.tooltip },
-      useHTML: true,
-      formatter: function () { return sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]) },
-      shared: true
-    }, tooltip),
+    tooltip: {
+      valueSuffix: tooltip?.valueSuffix || undefined,
+      backgroundColor: tooltip?.backgroundColor || 'white',
+      borderColor: tooltip?.borderColor || 'transparent',
+      borderRadius: tooltip?.borderRadius || 0,
+      style: tooltip?.style || { 'font-family': OpenSans, 'font-size': sizes.tooltip },
+      useHTML: tooltip?.useHTML || true,
+      formatter: tooltip?.formatter || function (): string { return sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]) },
+      shared: tooltip?.shared || true
+    },
     xAxis: xAxis || {
       type: 'datetime',
       tickPixelInterval: 80,
@@ -208,9 +211,9 @@ export const createLineChart = ({ chart, title, subtitle, tooltip, plotOptions, 
         minute: '%H:%M',
         hour: '%H:%M'
       },
-      categories: null,
+      categories: undefined,
       labels: {
-        distance: null,
+        distance: undefined,
         rotation: -45
       },
       startOnTick: false,
@@ -226,12 +229,12 @@ export const createLineChart = ({ chart, title, subtitle, tooltip, plotOptions, 
         format: "{value} V"
       },
       gridLineWidth: 2,
-      gridLineDashStyle: 'dot'
+      gridLineDashStyle: 'Dot'
     }],
     ...other
   }
 }
-export const createBarChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, xAxis, yAxis, ...other } = {}) => {
+export const createBarChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, xAxis, yAxis, ...other }: Highcharts.Options = {}): Highcharts.Options => {
   return {
     chart: Object.assign({
       type: 'column'
@@ -263,17 +266,20 @@ export const createBarChart = ({ chart, title, subtitle, tooltip, plotOptions, s
     series: series || [{
       name: 'Device 3',
       yAxis: 0,
-      data: getRandomData(100, false, 12, false)
+      data: getRandomData(100, false, 12, false),
+      type: 'column'
     },
     {
       name: 'Device 2',
       yAxis: 0,
-      data: getRandomData(100, false, 12, false)
+      data: getRandomData(100, false, 12, false),
+      type: 'column'
     },
     {
       name: 'Device 1',
       yAxis: 0,
-      data: getRandomData(100, false, 12, false)
+      data: getRandomData(100, false, 12, false),
+      type: 'column'
     }],
     subtitle: Object.assign({
       text: '',
@@ -283,16 +289,16 @@ export const createBarChart = ({ chart, title, subtitle, tooltip, plotOptions, s
       text: '',
       style: { 'font-family': OpenSans, 'font-size': sizes.title },
     },title),
-    tooltip: Object.assign({
-      valueSuffix: null,
+    tooltip: {
+      valueSuffix: tooltip?.valueSuffix || undefined,
       style: { 'font-family': OpenSans, 'font-size': sizes.tooltip },
       useHTML: true,
       shared: true,
       backgroundColor: 'white',
       borderColor: 'transparent',
       borderRadius: 0,
-      formatter: function () { return sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]) },
-    },tooltip),
+      formatter: function (): string { return sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]) },
+    },
     xAxis: xAxis || {
       categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
       title: {
@@ -318,7 +324,7 @@ export const createBarChart = ({ chart, title, subtitle, tooltip, plotOptions, s
     ...other
   }
 }
-export const createDonutChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, ...other } = {}) => {
+export const createDonutChart = ({ chart, title, subtitle, tooltip, plotOptions, series, legend, colors, ...other }: Highcharts.Options = {}): Highcharts.Options => {
   return {
     chart: Object.assign({
       type: 'pie',
@@ -332,22 +338,24 @@ export const createDonutChart = ({ chart, title, subtitle, tooltip, plotOptions,
       text: '',
       style: { 'font-family': OpenSans, 'font-size': sizes.subtitle }
     },subtitle),
-    tooltip: Object.assign({
-      borderWidth: 0,
-      backgroundColor: 'none',
-      shadow: false,
-      style: {
+    tooltip: {
+      borderWidth: tooltip?.borderWidth || 0,
+      backgroundColor: tooltip?.backgroundColor || 'none',
+      shadow: tooltip?.shadow|| false,
+      style: tooltip?.style || {
         fontSize: '16px'
       },
-      headerFormat: '',
+      headerFormat: tooltip?.headerFormat || '',
       pointFormat: '{point.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
       positioner: function (labelWidth) {
         return {
+          // @ts-ignore
           x: (this.chart.chartWidth - labelWidth) / 2,
+          // @ts-ignore
           y: (this.chart.plotHeight / 2) - 36
         };
       }
-    },tooltip),
+    },
     plotOptions: Object.assign({
       series: {
         states: {
@@ -377,6 +385,7 @@ export const createDonutChart = ({ chart, title, subtitle, tooltip, plotOptions,
       name: 'Browsers',
       showInLegend: false,
       colors: colors || pxblueColors,
+      type: 'pie',
       data: [{
         name: 'Device 3',
         y: 61.41

@@ -13,16 +13,16 @@ test('pie chart parameters work', () => {
         subtitle: {align: 'left'},
         tooltip: {borderColor: 'red'},
         plotOptions: {series: {states: {hover: {halo: {size: 20}}}}},
-        series: [{name: 'Test'}],
+        series: [{name: 'Test', type: 'pie'}],
         legend: {enabled: false}
     });
-    expect(x.title.text).toEqual('test');
-    expect(x.subtitle.align).toEqual('left');
-    expect(x.tooltip.borderColor).toEqual('red');
-    expect(x.plotOptions.series.states.hover.halo.size).toEqual(20);
+    expect(x.title?.text).toEqual('test');
+    expect(x.subtitle?.align).toEqual('left');
+    expect(x.tooltip?.borderColor).toEqual('red');
+    expect(x.plotOptions?.series?.states?.hover?.halo?.size).toEqual(20);
     expect(x.series).toContainEqual({name: 'Test'});
-    expect(x.series.length).toEqual(1);
-    expect(x.legend.enabled).toEqual(false);
+    expect(x.series?.length).toEqual(1);
+    expect(x.legend?.enabled).toEqual(false);
 });
 
 test('line chart parameters work', () => {
@@ -31,24 +31,22 @@ test('line chart parameters work', () => {
         subtitle: {align: 'left'},
         tooltip: {borderColor: 'red'},
         plotOptions: {series: {states: {hover: {enabled: false}}}},
-        series: [{name: 'Test'}],
+        series: [{name: 'Test', type: "line"}],
         legend: {enabled: false},
         colors: ['red', 'blue'],
         xAxis:{title:{text: 'test'}},
-        yAxis: {labels:{format: '{value}'}},
-        useUTC: true
+        yAxis: {labels:{format: '{value}'}}
     });
-    expect(x.useUTC).toEqual(true);
     expect(x.colors).toEqual(['red','blue']);
-    expect(x.title.text).toEqual('test');
-    expect(x.subtitle.align).toEqual('left');
-    expect(x.tooltip.borderColor).toEqual('red');
-    expect(x.plotOptions.series.states.hover.enabled).toEqual(false);
+    expect(x.title?.text).toEqual('test');
+    expect(x.subtitle?.align).toEqual('left');
+    expect(x.tooltip?.borderColor).toEqual('red');
+    expect(x.plotOptions?.series?.states?.hover?.enabled).toEqual(false);
     expect(x.series).toContainEqual({name: 'Test'});
-    expect(x.series.length).toEqual(1);
-    expect(x.legend.enabled).toEqual(false);
-    expect(x.xAxis.title.text).toEqual('test');
-    expect(x.yAxis.labels.format).toEqual('{value}');
+    expect(x.series?.length).toEqual(1);
+    expect(x.legend?.enabled).toEqual(false);
+    expect((<Highcharts.XAxisOptions>(x.xAxis)).title?.text).toEqual('test');
+    expect((<Highcharts.YAxisOptions>(x.yAxis)).labels?.format).toEqual('{value}');
 
 });
 
@@ -58,22 +56,22 @@ test('bar chart parameters work', () => {
         subtitle: {align: 'left'},
         tooltip: {borderColor: 'red'},
         plotOptions: {series: {states: {hover: {enabled: false}}}},
-        series: [{name: 'Test'}],
+        series: [{name: 'Test', type: "column"}],
         legend: {enabled: false},
         colors: ['red', 'blue'],
         xAxis:{title:{text: 'test'}},
         yAxis: {labels:{format: '{value} unit'}},
     });
     expect(x.colors).toEqual(['red','blue']);
-    expect(x.title.text).toEqual('test');
-    expect(x.subtitle.align).toEqual('left');
-    expect(x.tooltip.borderColor).toEqual('red');
-    expect(x.plotOptions.series.states.hover.enabled).toEqual(false);
+    expect(x.title?.text).toEqual('test');
+    expect(x.subtitle?.align).toEqual('left');
+    expect(x.tooltip?.borderColor).toEqual('red');
+    expect(x.plotOptions?.series?.states?.hover?.enabled).toEqual(false);
     expect(x.series).toContainEqual({name: 'Test'});
-    expect(x.series.length).toEqual(1);
-    expect(x.legend.enabled).toEqual(false);
-    expect(x.xAxis.title.text).toEqual('test');
-    expect(x.yAxis.labels.format).toEqual('{value} unit');
+    expect(x.series?.length).toEqual(1);
+    expect(x.legend?.enabled).toEqual(false);
+    expect((<Highcharts.XAxisOptions>(x.xAxis)).title?.text).toEqual('test');
+    expect((<Highcharts.YAxisOptions>(x.yAxis)).labels?.format).toEqual('{value} unit');
 });
 
 test('donut chart parameters work', () => {
@@ -82,14 +80,14 @@ test('donut chart parameters work', () => {
         subtitle: {align: 'left'},
         tooltip: {borderColor: 'red'},
         plotOptions: {series: {states: {hover: {enabled: false}}}},
-        series: [{name: 'Test'}],
+        series: [{name: 'Test', type: 'pie'}],
         legend: {enabled: false}
     });
-    expect(x.title.text).toEqual('test');
-    expect(x.subtitle.align).toEqual('left');
-    expect(x.tooltip.borderColor).toEqual('red');
-    expect(x.plotOptions.series.states.hover.enabled).toEqual(false);
+    expect(x.title?.text).toEqual('test');
+    expect(x.subtitle?.align).toEqual('left');
+    expect(x.tooltip?.borderColor).toEqual('red');
+    expect(x.plotOptions?.series?.states?.hover?.enabled).toEqual(false);
     expect(x.series).toContainEqual({name: 'Test'});
-    expect(x.series.length).toEqual(1);
-    expect(x.legend.enabled).toEqual(false);
+    expect(x.series?.length).toEqual(1);
+    expect(x.legend?.enabled).toEqual(false);
 });

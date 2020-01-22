@@ -16,9 +16,11 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 */
 
 import { sizes } from '../styles';
+import * as Highcharts from 'highcharts'
 
 // timestamp used as a starting point for randomized time-series data
 const startTime = (new Date()).getTime();
+const contextErrorMessage = 'Error: No context.points.';
 
 /*
   returns a set of randomized numeric data based on the paramters
@@ -28,7 +30,7 @@ const startTime = (new Date()).getTime();
   count: (Number) the number of data points to generate
   timeseries: (Boolean) if true, the x-values will be timestamps
 */
-export function getRandomData(scale, balanced = true, count = 20, timeseries = false){
+export function getRandomData(scale: number, balanced = true, count = 20, timeseries = false) {
   // generate an array of random data
   var data = [], i;
 
@@ -52,13 +54,20 @@ export function getRandomData(scale, balanced = true, count = 20, timeseries = f
   units: (Array<String>) an array of units to append (one per series)
   rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
 */
-export function sharedTooltipFormatter(context, units = [], rounding = []){
+export function sharedTooltipFormatter (context: Highcharts.TooltipFormatterContextObject, units: string[] = [], rounding: number[] = []) {
   let s = '<div style="min-width: 100px; padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'"><table>';
-  for(let i = 0; i < context.points.length; i++){
-    s += '<tr>'+
-        '<td style="padding:0"><b>' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + '<span style="color: '+context.points[i].series.color+'">' + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>'
+
+  if (context.points) {
+    for(let i = 0; i < context.points.length; i++){
+      s += '<tr>'+
+          '<td style="padding:0"><b>' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + '<span style="color: '+context.points[i].color+'">' + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>';
+    } 
+  } else {
+    s += contextErrorMessage;
   }
+
   s += '</table><span>' + context.x + '</span></div>';
+  
   return s;
 }
 
@@ -68,12 +77,18 @@ export function sharedTooltipFormatter(context, units = [], rounding = []){
   units: (Array<String>) an array of units to append (one per series)
   rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
 */
-export function sharedTimeTooltipFormatter(context, units = [], rounding = []){
+export function sharedTimeTooltipFormatter(context: Highcharts.TooltipFormatterContextObject, units: string[] = [], rounding: number[] = []): string{
   let s = '<div style="padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'"><table>';
-  for(let i = 0; i < context.points.length; i++){
-    s += '<tr>'+
-        '<td style="padding:0"><b>' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + '<span style="color: '+context.points[i].series.color+'">' + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>'
+
+  if (context.points) {
+    for(let i = 0; i < context.points.length; i++){
+      s += '<tr>'+
+          '<td style="padding:0"><b>' + '<span style="color: '+context.points[i].color+'">' + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + (units.length > 0 ? ' ' + units[i] : '')) + '</span></b></td></tr>';
+    }
+  } else {
+    s += contextErrorMessage;
   }
+  
   s += '</table><span>' + (new Date(context.x)).toLocaleTimeString("en-US", {hour: '2-digit', minute: '2-digit', second: '2-digit'}) + '</span></div>';
   return s;
 }
@@ -84,7 +99,7 @@ export function sharedTimeTooltipFormatter(context, units = [], rounding = []){
   units: (Array<String>) an array of units to append (one per series)
   rounding: (Array<Number>) an array specifying how many decimal places to round the values in the tooltip (one value per series)
 */
-export function simpleTooltipFormatter(context, units = '', rounding = 2){
+export function simpleTooltipFormatter(context: Highcharts.TooltipFormatterContextObject, units = '', rounding = 2): string{
   return '<div style="padding: 4px; font-family: Open Sans; font-size: '+sizes.tooltip+'">'+
             '<table>'+
               '<tr>' +
