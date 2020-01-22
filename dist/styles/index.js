@@ -14,7 +14,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
   sizes: an array of font sizes for various chart elements
 */
 var PXBColors = require("@pxblue/colors");
-exports.OpenSans = "Open Sans";
+exports.OpenSans = 'Open Sans';
 exports.pxblueColors = [
     PXBColors.blue[500],
     PXBColors.red[500],
@@ -29,12 +29,12 @@ exports.pxblueColors = [
     PXBColors.purple[300],
     PXBColors.orange[300],
     PXBColors.gold[300],
-    PXBColors.yellow[300]
+    PXBColors.yellow[300],
 ];
 exports.sizes = {
     title: '1.4em',
     subtitle: '1.1em',
     axisTitle: '1em',
     axisLabel: '.8em',
-    tooltip: '1em'
+    tooltip: '1em',
 };

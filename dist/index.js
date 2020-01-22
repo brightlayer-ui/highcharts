@@ -46,75 +46,90 @@ exports.createPieChart = function (_a) {
         backgroundColor: ((_c = tooltip) === null || _c === void 0 ? void 0 : _c.backgroundColor) || 'white',
         borderColor: ((_d = tooltip) === null || _d === void 0 ? void 0 : _d.borderColor) || 'transparent',
         borderRadius: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.borderRadius) || 0,
-        formatter: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.formatter) || function () { return utilities_1.simpleTooltipFormatter(this, '', 2); }
+        formatter: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.formatter) ||
+            function () {
+                return utilities_1.simpleTooltipFormatter(this, '', 2);
+            },
     };
     return __assign({ chart: Object.assign({
             type: 'pie',
-            spacing: [0, 0, 0, 0]
+            spacing: [0, 0, 0, 0],
         }, chart), title: Object.assign({
             text: '',
             align: 'left',
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title }
+            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title },
         }, title), subtitle: Object.assign({
             text: '',
             align: 'left',
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle }
+            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle },
         }, subtitle), tooltip: Object.assign(_tooltip, tooltip), plotOptions: Object.assign({
             series: {
                 states: {
                     hover: {
                         halo: {
-                            size: 10
-                        }
-                    }
-                }
+                            size: 10,
+                        },
+                    },
+                },
             },
             pie: {
                 dataLabels: {
-                    enabled: false
+                    enabled: false,
                 },
                 borderWidth: 3,
-                size: '100%'
-            }
+                size: '100%',
+            },
         }, plotOptions), legend: Object.assign({
             enabled: true,
             itemStyle: {
-                fontFamily: styles_1.OpenSans
-            }
-        }, legend), series: series || [{
+                fontFamily: styles_1.OpenSans,
+            },
+        }, legend), series: series || [
+            {
                 name: 'Browsers',
                 colors: colors || styles_1.pxblueColors,
                 type: 'pie',
-                data: [{
+                data: [
+                    {
                         name: 'Chrome',
-                        y: 61.41
-                    }, {
+                        y: 61.41,
+                    },
+                    {
                         name: 'Internet Explorer',
-                        y: 11.84
-                    }, {
+                        y: 11.84,
+                    },
+                    {
                         name: 'Firefox',
-                        y: 10.85
-                    }, {
+                        y: 10.85,
+                    },
+                    {
                         name: 'Edge',
-                        y: 4.67
-                    }, {
+                        y: 4.67,
+                    },
+                    {
                         name: 'Safari',
-                        y: 4.18
-                    }, {
+                        y: 4.18,
+                    },
+                    {
                         name: 'Sogou Explorer',
-                        y: 1.64
-                    }, {
+                        y: 1.64,
+                    },
+                    {
                         name: 'Opera',
-                        y: 1.6
-                    }, {
+                        y: 1.6,
+                    },
+                    {
                         name: 'QQ',
-                        y: 1.2
-                    }, {
+                        y: 1.2,
+                    },
+                    {
                         name: 'Other',
-                        y: 2.61
-                    }]
-            }], credits: {
-            enabled: false
+                        y: 2.61,
+                    },
+                ],
+            },
+        ], credits: {
+            enabled: false,
         } }, other);
 };
 exports.createLineChart = function (_a) {
@@ -128,159 +143,172 @@ exports.createLineChart = function (_a) {
         borderRadius: ((_e = tooltip) === null || _e === void 0 ? void 0 : _e.borderRadius) || 0,
         style: ((_f = tooltip) === null || _f === void 0 ? void 0 : _f.style) || { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip },
         useHTML: ((_g = tooltip) === null || _g === void 0 ? void 0 : _g.useHTML) || true,
-        formatter: ((_h = tooltip) === null || _h === void 0 ? void 0 : _h.formatter) || function () { return utilities_1.sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]); },
-        shared: ((_j = tooltip) === null || _j === void 0 ? void 0 : _j.shared) || true
+        formatter: ((_h = tooltip) === null || _h === void 0 ? void 0 : _h.formatter) ||
+            function () {
+                return utilities_1.sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]);
+            },
+        shared: ((_j = tooltip) === null || _j === void 0 ? void 0 : _j.shared) || true,
     };
     return __assign({ chart: Object.assign({
             type: 'line',
             zoomType: 'xy',
             panning: true,
-            panKey: 'shift'
+            panKey: 'shift',
         }, chart), colors: colors || styles_1.pxblueColors, credits: {
-            enabled: false
+            enabled: false,
         }, legend: Object.assign({
             enabled: true,
             itemStyle: {
-                fontFamily: styles_1.OpenSans
-            }
+                fontFamily: styles_1.OpenSans,
+            },
         }, legend), plotOptions: Object.assign({
             series: {
                 states: {
                     hover: {
                         enabled: true,
-                        lineWidthPlus: 0
-                    }
+                        lineWidthPlus: 0,
+                    },
                 },
                 marker: {
-                    enabled: false
+                    enabled: false,
                 },
-                lineWidth: 2
-            }
-        }, plotOptions), series: series || [{
+                lineWidth: 2,
+            },
+        }, plotOptions), series: series || [
+            {
                 name: 'Device 3',
                 yAxis: 0,
                 data: utilities_1.getRandomData(500, false, 30, true),
-                type: 'line'
+                type: 'line',
             },
             {
                 name: 'Device 2',
                 yAxis: 0,
                 data: utilities_1.getRandomData(100, true, 30, true),
-                type: 'line'
+                type: 'line',
             },
             {
                 name: 'Device 1',
                 yAxis: 0,
                 data: utilities_1.getRandomData(100, true, 30, true),
-                type: 'line'
-            }], subtitle: Object.assign({
+                type: 'line',
+            },
+        ], subtitle: Object.assign({
             text: '',
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle }
+            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle },
         }, subtitle), title: Object.assign({
             text: '',
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title }
+            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title },
         }, title), tooltip: Object.assign(_tooltip, tooltip), xAxis: xAxis || {
             type: 'datetime',
             tickPixelInterval: 80,
             alternateGridColor: 'rgba(0,0,0,0.04)',
             title: {
                 style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisTitle },
-                text: "Last 20 Seconds"
+                text: 'Last 20 Seconds',
             },
             dateTimeLabelFormats: {
                 second: '%H:%M:%S',
                 minute: '%H:%M',
-                hour: '%H:%M'
+                hour: '%H:%M',
             },
             categories: undefined,
             labels: {
                 distance: undefined,
-                rotation: -45
+                rotation: -45,
             },
             startOnTick: false,
-            endOnTick: false
-        }, yAxis: yAxis || [{
+            endOnTick: false,
+        }, yAxis: yAxis || [
+            {
                 title: {
                     text: '',
                     style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisTitle },
                 },
                 labels: {
                     style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisLabel },
-                    format: "{value} V"
+                    format: '{value} V',
                 },
                 gridLineWidth: 2,
-                gridLineDashStyle: 'Dot'
-            }] }, other);
+                gridLineDashStyle: 'Dot',
+            },
+        ] }, other);
 };
 exports.createBarChart = function (_a) {
     if (_a === void 0) { _a = {}; }
     var chart = _a.chart, title = _a.title, subtitle = _a.subtitle, tooltip = _a.tooltip, plotOptions = _a.plotOptions, series = _a.series, legend = _a.legend, colors = _a.colors, xAxis = _a.xAxis, yAxis = _a.yAxis, other = __rest(_a, ["chart", "title", "subtitle", "tooltip", "plotOptions", "series", "legend", "colors", "xAxis", "yAxis"]);
     return (__assign({ chart: Object.assign({
-            type: 'column'
+            type: 'column',
         }, chart), colors: colors || styles_1.pxblueColors, credits: {
-            enabled: false
+            enabled: false,
         }, legend: Object.assign({
             enabled: true,
             itemStyle: {
-                fontFamily: styles_1.OpenSans
-            }
+                fontFamily: styles_1.OpenSans,
+            },
         }, legend), plotOptions: Object.assign({
             series: {
                 states: {
                     hover: {
-                        enabled: false
-                    }
-                }
+                        enabled: false,
+                    },
+                },
             },
             column: {
                 pointPadding: 0,
                 borderWidth: 0,
-                stacking: 'normal'
-            }
-        }, plotOptions), series: series || [{
+                stacking: 'normal',
+            },
+        }, plotOptions), series: series || [
+            {
                 name: 'Device 3',
                 yAxis: 0,
                 data: utilities_1.getRandomData(100, false, 12, false),
-                type: 'column'
+                type: 'column',
             },
             {
                 name: 'Device 2',
                 yAxis: 0,
                 data: utilities_1.getRandomData(100, false, 12, false),
-                type: 'column'
+                type: 'column',
             },
             {
                 name: 'Device 1',
                 yAxis: 0,
                 data: utilities_1.getRandomData(100, false, 12, false),
-                type: 'column'
-            }], subtitle: Object.assign({
+                type: 'column',
+            },
+        ], subtitle: Object.assign({
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle },
         }, subtitle), title: Object.assign({
             text: '',
             style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title },
-        }, title), tooltip: __assign({ style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip }, useHTML: true, shared: true, backgroundColor: 'white', borderColor: 'transparent', borderRadius: 0, formatter: function () { return utilities_1.sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]); } }, tooltip), xAxis: xAxis || {
+        }, title), tooltip: __assign({ style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.tooltip }, useHTML: true, shared: true, backgroundColor: 'white', borderColor: 'transparent', borderRadius: 0, formatter: function () {
+                return utilities_1.sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]);
+            } }, tooltip), xAxis: xAxis || {
             categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
             title: {
                 style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisTitle },
-                text: "Last 12 Months"
+                text: 'Last 12 Months',
             },
             labels: {
-                enabled: true
+                enabled: true,
             },
-            type: 'category'
-        }, yAxis: yAxis || [{
+            type: 'category',
+        }, yAxis: yAxis || [
+            {
                 title: {
                     text: 'Energy (kWh)',
                     style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisTitle },
                 },
                 labels: {
                     style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.axisLabel },
-                    format: "{value}"
+                    format: '{value}',
                 },
-                alternateGridColor: 'rgba(0,0,0,0.04)'
-            }] }, other));
+                alternateGridColor: 'rgba(0,0,0,0.04)',
+            },
+        ] }, other));
 };
 exports.createDonutChart = function (_a) {
     if (_a === void 0) { _a = {}; }
@@ -291,7 +319,7 @@ exports.createDonutChart = function (_a) {
         backgroundColor: 'none',
         shadow: false,
         style: {
-            fontSize: '16px'
+            fontSize: '16px',
         },
         headerFormat: ((_b = tooltip) === null || _b === void 0 ? void 0 : _b.headerFormat) || '',
         pointFormat: '{point.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
@@ -300,58 +328,64 @@ exports.createDonutChart = function (_a) {
                 // @ts-ignore
                 x: (this.chart.chartWidth - labelWidth) / 2,
                 // @ts-ignore
-                y: (this.chart.plotHeight / 2) - 36
+                y: this.chart.plotHeight / 2 - 36,
             };
-        }
+        },
     };
     return __assign({ chart: Object.assign({
             type: 'pie',
-            spacing: [0, 0, 0, 0]
+            spacing: [0, 0, 0, 0],
         }, chart), title: Object.assign({
             text: '',
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title }
+            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.title },
         }, title), subtitle: Object.assign({
             text: '',
-            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle }
+            style: { 'font-family': styles_1.OpenSans, 'font-size': styles_1.sizes.subtitle },
         }, subtitle), tooltip: Object.assign(_tooltip, tooltip), plotOptions: Object.assign({
             series: {
                 states: {
                     hover: {
                         halo: {
-                            size: 10
-                        }
-                    }
-                }
+                            size: 10,
+                        },
+                    },
+                },
             },
             pie: {
                 dataLabels: {
-                    enabled: false
+                    enabled: false,
                 },
                 borderWidth: 3,
                 innerSize: '75%',
-                size: '100%'
-            }
+                size: '100%',
+            },
         }, plotOptions), legend: Object.assign({
             enabled: true,
             itemStyle: {
-                fontFamily: styles_1.OpenSans
-            }
-        }, legend), series: series || [{
+                fontFamily: styles_1.OpenSans,
+            },
+        }, legend), series: series || [
+            {
                 name: 'Browsers',
                 showInLegend: false,
                 colors: colors || styles_1.pxblueColors,
                 type: 'pie',
-                data: [{
+                data: [
+                    {
                         name: 'Device 3',
-                        y: 61.41
-                    }, {
+                        y: 61.41,
+                    },
+                    {
                         name: 'Device 2',
-                        y: 11.84
-                    }, {
+                        y: 11.84,
+                    },
+                    {
                         name: 'Device 1',
-                        y: 10.85
-                    }]
-            }], credits: {
-            enabled: false
+                        y: 10.85,
+                    },
+                ],
+            },
+        ], credits: {
+            enabled: false,
         } }, other);
 };

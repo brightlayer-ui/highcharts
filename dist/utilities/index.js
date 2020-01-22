@@ -17,7 +17,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 */
 var styles_1 = require("../styles");
 // timestamp used as a starting point for randomized time-series data
-var startTime = (new Date()).getTime();
+var startTime = new Date().getTime();
 var contextErrorMessage = 'Error: No context.points.';
 /*
   returns a set of randomized numeric data based on the paramters
@@ -38,7 +38,7 @@ function getRandomData(scale, balanced, count, timeseries) {
         if (timeseries) {
             data.push({
                 x: startTime + i * 1000,
-                y: (Math.random() - (balanced ? 0.5 : 0)) * scale
+                y: (Math.random() - (balanced ? 0.5 : 0)) * scale,
             });
         }
         else {
@@ -60,8 +60,7 @@ function sharedTooltipFormatter(context, units, rounding) {
     var s = "<div style=\"min-width: 100px; padding: 4px; font-family: Open Sans; font-size: " + styles_1.sizes.tooltip + "\"><table>";
     if (context.points) {
         for (var i = 0; i < context.points.length; i++) {
-            s += "" + '<tr>' +
-                '<td style="padding:0"><b>' + context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + "<span style=\"color: " + context.points[i].color + "\">" + (units.length > 0 ? " " + units[i] : '') + "</span></b></td></tr>";
+            s += "" + '<tr>' + '<td style="padding:0"><b>' + context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + "<span style=\"color: " + context.points[i].color + "\">" + (units.length > 0 ? " " + units[i] : '') + "</span></b></td></tr>";
         }
     }
     else {
@@ -83,14 +82,18 @@ function sharedTimeTooltipFormatter(context, units, rounding) {
     var s = "<div style=\"padding: 4px; font-family: Open Sans; font-size: " + styles_1.sizes.tooltip + "\"><table>";
     if (context.points) {
         for (var i = 0; i < context.points.length; i++) {
-            s += "" + '<tr>' +
-                '<td style="padding:0"><b>' + '<span style="color: ' + context.points[i].color + "\">" + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) + (units.length > 0 ? " " + units[i] : '')) + "</span></b></td></tr>";
+            s += "" + '<tr>' + '<td style="padding:0"><b>' + '<span style="color: ' + context.points[i].color + "\">" + (context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) +
+                (units.length > 0 ? " " + units[i] : '')) + "</span></b></td></tr>";
         }
     }
     else {
         s += contextErrorMessage;
     }
-    s += "</table><span>" + (new Date(context.x)).toLocaleTimeString("en-US", { hour: '2-digit', minute: '2-digit', second: '2-digit' }) + "</span></div>";
+    s += "</table><span>" + new Date(context.x).toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+    }) + "</span></div>";
     return s;
 }
 exports.sharedTimeTooltipFormatter = sharedTimeTooltipFormatter;
@@ -103,13 +106,13 @@ exports.sharedTimeTooltipFormatter = sharedTimeTooltipFormatter;
 function simpleTooltipFormatter(context, units, rounding) {
     if (units === void 0) { units = ''; }
     if (rounding === void 0) { rounding = 2; }
-    return "<div style=\"padding: 4px; font-family: Open Sans; font-size: " + styles_1.sizes.tooltip + "\">" +
+    return ("<div style=\"padding: 4px; font-family: Open Sans; font-size: " + styles_1.sizes.tooltip + "\">" +
         "<table>" +
         "<tr>" +
         ("<td style=\"padding:0; color: " + context.point.color + "\">" + context.point.name + ":</td>") +
         ("<td><b>" + context.y.toFixed(rounding) + (units ? " " + units : '') + "</b></td>") +
         "</tr>" +
         "</table>" +
-        "</div>";
+        "</div>");
 }
 exports.simpleTooltipFormatter = simpleTooltipFormatter;
