@@ -4,8 +4,6 @@ import ReactHighcharts from 'react-highcharts';
 
 // @ts-ignore
 import { createLineChart, createBarChart, createPieChart, createDonutChart } from '@pxblue/highcharts';
-
-// @ts-ignore
 import * as PXBColors from '@pxblue/colors';
 
 const mainConfig = {
