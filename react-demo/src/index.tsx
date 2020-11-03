@@ -9,7 +9,7 @@ import {
    createMuiTheme
 } from '@material-ui/core/styles';
 // @ts-ignore
-import * as PXBlueThemes from '@pxblue/themes/react';
+import * as PXBlueThemes from '@pxblue/react-themes';
 require('typeface-open-sans');
 
 ReactDOM.render(
