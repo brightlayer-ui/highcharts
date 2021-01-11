@@ -1,8 +1,13 @@
-# Recent Changes
+# CHANGELOG
+
 ### v2.0.0
-Library converted to TypeScript to provide strong typings for TS projects. This will continue to work for plain JavaScript projects without any changes necessary.
+
+### Changed
+- Library converted to TypeScript to provide strong typings for TS projects. This will continue to work for plain JavaScript projects without any changes necessary.
 
 ### v1.1.0
+
+### Changed
 Significant improvements to the way we generate charts:
 * We now expose chart generator functions, rather than sample config objects
 * These generator functions accept a configuration object that supports any Highcharts configuration properties
@@ -14,4 +19,4 @@ Breaking changes:
 * baseConfig object exports have been replaced by the chart generator functions
 
 ### v1.0.0
-This library has been ported from @pxblue/visualizations
+- This library has been ported from @pxblue/visualizations
