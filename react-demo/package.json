@@ -5,9 +5,10 @@
   "author": "pxblue <pxblue@eaton.com>",
   "dependencies": {
     "@material-ui/core": "^4.4.2",
-    "@pxblue/colors": "^1.0.13",
+    "@pxblue/colors": "^3.0.0",
     "@pxblue/highcharts": "^1.1.1",
-    "@pxblue/react-themes": "^5.0.2",
+    "@pxblue/react-themes": "^6.0.0-beta.0",
+    "@pxblue/types": "^2.0.0",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.5",
     "@types/react": "16.9.2",
@@ -20,7 +21,6 @@
     "react-dom": "^16.9.0",
     "react-highcharts": "^16.0.2",
     "react-scripts": "3.1.2",
-    "typeface-open-sans": "^0.0.75",
     "typescript": "3.6.3"
   },
   "scripts": {
