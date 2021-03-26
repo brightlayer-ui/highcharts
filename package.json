@@ -1,6 +1,6 @@
 {
   "name": "@pxblue/highcharts",
-  "version": "2.0.0",
+  "version": "2.1.0-beta.0",
   "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -14,7 +14,9 @@
   "prettier": "@pxblue/prettier-config",
   "scripts": {
     "build": "yarn && tsc",
-    "test": "jest",
+    "test": "jest src/**/** --passWithNoTests",
+    "test:angular": "cd angular-demo && yarn test && cd ..",
+    "test:react": "cd react-demo && yarn test && cd ..",
     "test:build": "bash ./buildTest.sh",
     "linkscript": "bash ./link.sh",
     "start:angular": "yarn linkscript && cd angular-demo && yarn start",
@@ -36,17 +38,17 @@
     "@types/jest": "^26.0.0",
     "@typescript-eslint/eslint-plugin": "^4.6.1",
     "@typescript-eslint/parser": "^4.6.1",
-    "eslint": "^6.1.0",
-    "eslint-config-prettier": "^6.9.0",
+    "eslint": "^7.0.0",
+    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-react": "^7.18.0",
-    "highcharts": "7.2.0",
-    "jest": "^24.9.0",
-    "prettier": "^1.19.1",
-    "ts-jest": "26.4.3",
-    "typescript": "^3.7.5"
+    "highcharts": "^9.0.0",
+    "jest": "26.6.0",
+    "prettier": "^2.0.0",
+    "ts-jest": "^26.4.3",
+    "typescript": "^4.0.0"
   },
   "peerDependencies": {
-    "highcharts": "^7.2.0"
+    "highcharts": ">=7.2.0"
   },
   "keywords": [
     "Highcharts",

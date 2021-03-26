@@ -37,7 +37,7 @@ export const createPieChart = ({
         borderRadius: tooltip?.borderRadius || 0,
         formatter:
             tooltip?.formatter ||
-            function(): string {
+            function (): string {
                 return simpleTooltipFormatter(this, '', 2);
             },
     };
@@ -169,7 +169,7 @@ export const createLineChart = ({
         useHTML: tooltip?.useHTML || true,
         formatter:
             tooltip?.formatter ||
-            function(): string {
+            function (): string {
                 return sharedTimeTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]);
             },
         shared: tooltip?.shared || true,
@@ -377,7 +377,7 @@ export const createBarChart = ({
         backgroundColor: 'white',
         borderColor: 'transparent',
         borderRadius: 0,
-        formatter: function(): string {
+        formatter: function (): string {
             return sharedTooltipFormatter(this, ['V', 'V', 'V'], [3, 3, 3]);
         },
         ...tooltip,
@@ -429,7 +429,7 @@ export const createDonutChart = ({
         headerFormat: tooltip?.headerFormat || '',
         pointFormat:
             '{point.name}<br><span style="font-size:2em; color: {point.color}; font-weight: bold">{point.y}%</span>',
-        positioner: function(labelWidth) {
+        positioner: function (labelWidth) {
             return {
                 // @ts-ignore
                 x: (this.chart.chartWidth - labelWidth) / 2,
@@ -520,3 +520,5 @@ export const createDonutChart = ({
         ...other,
     };
 };
+
+export * from './utilities';
