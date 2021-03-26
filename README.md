@@ -83,8 +83,34 @@ import {
 } from '@pxblue/highcharts/utilities';
 ```
 
+### Translations
+
+Several functions are provided that will translate the language and format of chart labels. These functions can be imported from the i18n file and accept a language locale string as their argument.
+
+```tsx
+import { getChartsLanguage, getChartsAxisDateTimeLabelFormats, getChartsTooltipDateTimeLabelFormats } from '@pxblue/highcharts';
+...
+const langOptions = getChartsLanguage('fr');
+const axisFormats = getChartsAxisDateTimeLabelFormats('fr');
+const tooltipFormats = getChartsTooltipDateTimeLabelFormats('fr');
+```
+
+-   **getChartsLanguage**: _`(i18nLanguage: string) => Highcharts.LangOptions | undefined)`_
+-   **getChartsAxisDateTimeLabelFormats**: _`(i18nLanguage: string) => Highcharts.AxisDateTimeLabelFormatsOptions | undefined)`_
+-   **getChartsTooltipDateTimeLabelFormats**: _`(i18nLanguage: string) => FormatStrings | undefined)`_
+
+#### FormatStrings
+-   **day**: _`string`_
+-   **hour**: _`string`_
+-   **millisecond**: _`string`_
+-   **second**: _`string`_
+-   **minute**: _`string`_
+-   **month**: _`string`_
+-   **year**: _`string`_
+-   **week**: _`string`_
+
 ## Demos
-| Framework           | Live Examples  |
-| ---------------- |------------------|
-| Angular | [View on Stackblitz](https://stackblitz.com/github/pxblue/highcharts/tree/master/angular-demo)
-| React | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/highcharts/tree/master/react-demo)
+| Framework | Live Examples                                                                                    |
+|-----------|--------------------------------------------------------------------------------------------------|
+| Angular   | [View on Stackblitz](https://stackblitz.com/github/pxblue/highcharts/tree/master/angular-demo)   |
+| React     | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/highcharts/tree/master/react-demo) |
