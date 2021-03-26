@@ -5,8 +5,8 @@ import { ChartModule } from 'angular-highcharts';
 import { AppComponent } from './app.component';
 
 @NgModule({
-  imports:      [ BrowserModule, ChartModule ],
-  declarations: [ AppComponent ],
-  bootstrap:    [ AppComponent ]
+    imports: [BrowserModule, ChartModule],
+    declarations: [AppComponent],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
