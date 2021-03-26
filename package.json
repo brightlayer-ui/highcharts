@@ -14,7 +14,9 @@
   "prettier": "@pxblue/prettier-config",
   "scripts": {
     "build": "yarn && tsc",
-    "test": "jest",
+    "test": "jest src/**/** --passWithNoTests && yarn test:angular && yarn test:react",
+    "test:angular": "cd angular-demo && yarn test && cd ..",
+    "test:react": "cd react-demo && yarn test && cd ..",
     "test:build": "bash ./buildTest.sh",
     "linkscript": "bash ./link.sh",
     "start:angular": "yarn linkscript && cd angular-demo && yarn start",
