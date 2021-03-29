@@ -1,6 +1,6 @@
 # CHANGELOG
 
-### v2.1.0 (Not published yet)
+### v2.1.0
 
 ### Added
 - Utility functions for translating chart labels and formats.
