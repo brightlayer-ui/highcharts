@@ -2,22 +2,24 @@ import 'react-app-polyfill/ie11';
 import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import {
-   MuiThemeProvider,
-   createMuiTheme
-} from '@material-ui/core/styles';
-// @ts-ignore
-import * as PXBlueThemes from '@pxblue/themes/react';
-require('typeface-open-sans');
+import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
+import * as PXBThemes from '@pxblue/react-themes';
+import 'typeface-open-sans';
+import { App } from './App';
+import reportWebVitals from './reportWebVitals';
+import './index.css';
 
 ReactDOM.render(
-   <MuiThemeProvider theme={createMuiTheme(PXBlueThemes.blue)}>
-      <App/>
-   </MuiThemeProvider>, document.getElementById('root'));
+    <React.StrictMode>
+        <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
+            <CssBaseline />
+            <App />
+        </ThemeProvider>
+    </React.StrictMode>,
+    document.getElementById('root')
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// If you want to start measuring performance in your app, pass a function
+// to log results (for example: reportWebVitals(console.log))
+// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+reportWebVitals();

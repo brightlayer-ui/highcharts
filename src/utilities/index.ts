@@ -98,10 +98,10 @@ export function sharedTimeTooltipFormatter(
 
     if (context.points) {
         for (let i = 0; i < context.points.length; i++) {
-            s += `${'<tr>' + '<td style="padding:0"><b>' + '<span style="color: '}${
-                context.points[i].color
-            }">${context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) +
-                (units.length > 0 ? ` ${units[i]}` : '')}</span></b></td></tr>`;
+            s += `${'<tr>' + '<td style="padding:0"><b>' + '<span style="color: '}${context.points[i].color}">${
+                context.points[i].y.toFixed(rounding.length > 0 ? rounding[i] : 3) +
+                (units.length > 0 ? ` ${units[i]}` : '')
+            }</span></b></td></tr>`;
         }
     } else {
         s += contextErrorMessage;
@@ -137,3 +137,5 @@ export function simpleTooltipFormatter(
         `</div>`
     );
 }
+
+export * from './i18n';
