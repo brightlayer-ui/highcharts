@@ -1546,7 +1546,7 @@
   dependencies:
     "@pxblue/types" "^2.0.0"
 
-"@pxblue/eslint-config@^2.0.2":
+"@pxblue/eslint-config@^2.0.4":
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/@pxblue/eslint-config/-/eslint-config-2.0.4.tgz#b22d637e2e8bbf1d8606de99bfd7e95f3af2ce34"
   integrity sha512-PDBj5dhi/6c14/QYhoFLTkMnrYRTKw8hW7AuFq/9wc7pJ4MdSOF3i5MJH1NZ1p9chBl9na4ZASPeHWsDCvvk8A==
@@ -1572,14 +1572,6 @@
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@pxblue/prettier-config/-/prettier-config-1.0.2.tgz#fb00503df6557b66c3d91d43c9101e614c35d2ec"
   integrity sha512-/3cLBoTjZs3kV1ATPA/Sp0tsL7XmlV/b8HW/qt0jqR/uP5+cdXL2YIhMXQngLRa7PhpSkEiRIYK5sl0rKsXTUg==
-
-"@pxblue/react-components@^4.1.1":
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/react-components/-/react-components-4.2.0.tgz#694212c7ade3350e15fe9e8f9e485c771a8b8302"
-  integrity sha512-IkRFoCsThopwAM0YmneogRcCqBiIyk/aMZymq8Ng0ArDjZsE7XJ3CNxW3xbv4Ti+aWQzgZ8BHOgRV5tUtwuHuw==
-  dependencies:
-    "@pxblue/colors" "^3.0.0"
-    color "^3.1.2"
 
 "@pxblue/react-themes@^6.0.0":
   version "6.0.0"
@@ -3577,7 +3569,7 @@ color-string@^1.5.4:
     color-name "^1.0.0"
     simple-swizzle "^0.2.2"
 
-color@^3.0.0, color@^3.1.2, color@^3.1.3:
+color@^3.0.0, color@^3.1.3:
   version "3.1.3"
   resolved "https://registry.yarnpkg.com/color/-/color-3.1.3.tgz#ca67fb4e7b97d611dcde39eceed422067d91596e"
   integrity sha512-xgXAcTHa2HeFCGLE9Xs/R82hujGtu9Jd9x4NW3T34+OMs7VoPsjwzRczKHvTAHeJwWFwX5j15+MgAppE8ztObQ==
