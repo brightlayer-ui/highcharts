@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/highcharts",
-    "version": "2.1.0",
+    "version": "2.1.0-beta.1",
     "description": "Base configurations for assorted HighCharts graph types for Brightlayer UI.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -32,11 +32,11 @@
         "url": "git+https://github.com/brightlayer-ui/highcharts.git"
     },
     "dependencies": {
-        "@brightlayer-ui/colors": "^3.0.0"
+        "@brightlayer-ui/colors": "^3.0.1"
     },
     "devDependencies": {
-        "@brightlayer-ui/eslint-config": "^2.0.3",
-        "@brightlayer-ui/prettier-config": "^1.0.2",
+        "@brightlayer-ui/eslint-config": "^2.0.5",
+        "@brightlayer-ui/prettier-config": "^1.0.3",
         "@types/jest": "^26.0.0",
         "@typescript-eslint/eslint-plugin": "^4.6.1",
         "@typescript-eslint/parser": "^4.6.1",
