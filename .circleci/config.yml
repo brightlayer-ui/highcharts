@@ -50,7 +50,7 @@ jobs:
             - run:
                   name: Tag @brightlayer-ui/highcharts
                   command: |
-                      yarn tag:package -b $CIRCLE_BRANCH -s blui-highcharts
+                      yarn tag:package -b $CIRCLE_BRANCH -s -blui-highcharts
 
 workflows:
     version: 2
