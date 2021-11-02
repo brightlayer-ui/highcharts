@@ -1,17 +1,17 @@
 # Highcharts Configurations
-[![](https://img.shields.io/npm/v/@pxblue/highcharts.svg?label=@pxblue/highcharts&style=flat)](https://www.npmjs.com/package/@pxblue/highcharts)
-[![](https://img.shields.io/circleci/project/github/pxblue/highcharts/master.svg?style=flat)](https://circleci.com/gh/pxblue/highcharts/tree/master)
+[![](https://img.shields.io/npm/v/@brightlayer-ui/highcharts.svg?label=@brightlayer-ui/highcharts&style=flat)](https://www.npmjs.com/package/@brightlayer-ui/highcharts)
+[![](https://img.shields.io/circleci/project/github/brightlayer-ui/highcharts/master.svg?style=flat)](https://circleci.com/gh/brightlayer-ui/highcharts/tree/master)
 
-This package contains basic support for basic HighCharts line, pie, bar, and donut graphs for use with PX Blue. 
+This package contains basic support for basic HighCharts line, pie, bar, and donut graphs for use with Brightlayer UI. 
 
 ## Installation
 Install with npm:
 ```
-npm install --save @pxblue/highcharts
+npm install --save @brightlayer-ui/highcharts
 ```
 or yarn
 ```
-yarn add @pxblue/highcharts
+yarn add @brightlayer-ui/highcharts
 ```
 
 ## Basic Usage
@@ -23,7 +23,7 @@ import {
     createPieGraph, 
     createDonutGraph, 
     createBarGraph 
-} from '@pxblue/highcharts'; 
+} from '@brightlayer-ui/highcharts'; 
 ```
 
 and then use them as placeholders in your application.
@@ -47,7 +47,7 @@ This will use the default sample data to render a chart in your application. Rea
 When you are ready to customize charts of your own, you can pass a configuration object into the chart generator functions. 
 
 ```
-import { createPieChart } from '@pxblue/highcharts';
+import { createPieChart } from '@brightlayer-ui/highcharts';
 ...
 let myPieConfig = {
     series: [{
@@ -71,16 +71,16 @@ This package also includes several utility functions and style variables to make
 ```
 import {
     OpenSans,       
-    pxblueColors,
+    bluiColors,
     sizes
-} from '@pxblue/highcharts/styles';
+} from '@brightlayer-ui/highcharts/styles';
 
 import {
     getRandomData,       
     sharedTooltipFormatter,
     sharedTimeTooltipFormatter,
     simpleTooltipFormatter
-} from '@pxblue/highcharts/utilities';
+} from '@brightlayer-ui/highcharts/utilities';
 ```
 
 ### Translations
@@ -88,7 +88,7 @@ import {
 Several functions are provided that will translate the language and format of chart labels. These functions can be imported from the i18n file and accept a language locale string as their argument.
 
 ```tsx
-import { getChartsLanguage, getChartsAxisDateTimeLabelFormats, getChartsTooltipDateTimeLabelFormats } from '@pxblue/highcharts';
+import { getChartsLanguage, getChartsAxisDateTimeLabelFormats, getChartsTooltipDateTimeLabelFormats } from '@brightlayer-ui/highcharts';
 ...
 const langOptions = getChartsLanguage('fr');
 const axisFormats = getChartsAxisDateTimeLabelFormats('fr');
@@ -112,5 +112,5 @@ const tooltipFormats = getChartsTooltipDateTimeLabelFormats('fr');
 ## Demos
 | Framework | Live Examples                                                                                    |
 |-----------|--------------------------------------------------------------------------------------------------|
-| Angular   | [View on Stackblitz](https://stackblitz.com/github/pxblue/highcharts/tree/master/angular-demo)   |
-| React     | [View on Code Sandbox](https://codesandbox.io/s/github/pxblue/highcharts/tree/master/react-demo) |
+| Angular   | [View on Stackblitz](https://stackblitz.com/github/brightlayer-ui/highcharts/tree/master/angular-demo)   |
+| React     | [View on Code Sandbox](https://codesandbox.io/s/github/brightlayer-ui/highcharts/tree/master/react-demo) |

@@ -17,23 +17,23 @@ cd ../angular-demo && yarn install
 cd ..
 echo -e "${GREEN}Done${NC}"
 
-echo -e "${BLUE}Building @pxblue/highcharts...${NC}"
+echo -e "${BLUE}Building @brightlayer-ui/highcharts...${NC}"
 yarn build
 echo -e "${GREEN}Done${NC}"
 
 
 echo -e "${BLUE}Creating new folders in node_modules...${NC}"
-rm -rf "./react-demo/node_modules/@pxblue/highcharts"
-mkdir "./react-demo/node_modules/@pxblue/highcharts"
-rm -rf "./angular-demo/node_modules/@pxblue/highcharts"
-mkdir "./angular-demo/node_modules/@pxblue/highcharts"
+rm -rf "./react-demo/node_modules/@brightlayer-ui/highcharts"
+mkdir "./react-demo/node_modules/@brightlayer-ui/highcharts"
+rm -rf "./angular-demo/node_modules/@brightlayer-ui/highcharts"
+mkdir "./angular-demo/node_modules/@brightlayer-ui/highcharts"
 echo -e "${GREEN}Done${NC}"
 
-echo -e "${BLUE}Linking @pxblue/highcharts into node_modules...${NC}";
-cp -r ./package.json ./react-demo/node_modules/@pxblue/highcharts/package.json
-cp -r ./package.json ./angular-demo/node_modules/@pxblue/highcharts/package.json
-cp -r ./dist ./react-demo/node_modules/@pxblue/highcharts
-cp -r ./dist ./angular-demo/node_modules/@pxblue/highcharts
+echo -e "${BLUE}Linking @brightlayer-ui/highcharts into node_modules...${NC}";
+cp -r ./package.json ./react-demo/node_modules/@brightlayer-ui/highcharts/package.json
+cp -r ./package.json ./angular-demo/node_modules/@brightlayer-ui/highcharts/package.json
+cp -r ./dist ./react-demo/node_modules/@brightlayer-ui/highcharts
+cp -r ./dist ./angular-demo/node_modules/@brightlayer-ui/highcharts
 
 echo -e "${GREEN}Done${NC}"
 

@@ -1,68 +1,68 @@
 {
-  "name": "@pxblue/highcharts",
-  "version": "2.1.0",
-  "description": "Base configurations for assorted HighCharts graph types for PX Blue.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist/",
-    "package.json",
-    "LICENSE",
-    "README.md",
-    "CHANGELOG.md"
-  ],
-  "prettier": "@pxblue/prettier-config",
-  "scripts": {
-    "build": "yarn && tsc",
-    "test": "jest src/**/** --passWithNoTests",
-    "test:angular": "cd angular-demo && yarn test && cd ..",
-    "test:react": "cd react-demo && yarn test && cd ..",
-    "test:build": "bash ./buildTest.sh",
-    "linkscript": "bash ./link.sh",
-    "prettier": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
-    "publish:package": "set npm_config_yes=true && npx -p @pxblue/publish pxb-publish",
-    "tag:package": "npx -p @pxblue/tag pxb-tag",
-    "start:angular": "yarn linkscript && cd angular-demo && yarn start",
-    "start:react": "yarn linkscript && cd react-demo && yarn start",
-    "lint": "eslint \"src/**/**.{tsx,ts}\"",
-    "lint:fix": "eslint \"src/**/**.{tsx,ts}\" --fix"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/pxblue/highcharts.git"
-  },
-  "dependencies": {
-    "@pxblue/colors": "^3.0.0"
-  },
-  "devDependencies": {
-    "@pxblue/eslint-config": "^2.0.3",
-    "@pxblue/prettier-config": "^1.0.2",
-    "@types/jest": "^26.0.0",
-    "@typescript-eslint/eslint-plugin": "^4.6.1",
-    "@typescript-eslint/parser": "^4.6.1",
-    "eslint": "^7.0.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-react": "^7.18.0",
-    "highcharts": "^9.0.0",
-    "jest": "26.6.0",
-    "prettier": "^2.0.0",
-    "ts-jest": "^26.4.3",
-    "typescript": "^4.0.0"
-  },
-  "peerDependencies": {
-    "highcharts": ">=7.2.0"
-  },
-  "keywords": [
-    "Highcharts",
-    "Visualization",
-    "PXBlue",
-    "Chart",
-    "Graph"
-  ],
-  "author": "pxblue <pxblue@eaton.com>",
-  "license": "BSD-3-Clause",
-  "bugs": {
-    "url": "https://github.com/pxblue/highchart/issues"
-  },
-  "homepage": "https://github.com/pxblue/highcharts#readme"
+    "name": "@brightlayer-ui/highcharts",
+    "version": "2.1.0-beta.0",
+    "description": "Base configurations for assorted HighCharts graph types for Brightlayer UI.",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "files": [
+        "dist/",
+        "package.json",
+        "LICENSE",
+        "README.md",
+        "CHANGELOG.md"
+    ],
+    "prettier": "@brightlayer-ui/prettier-config",
+    "scripts": {
+        "build": "yarn && tsc",
+        "test": "jest src/**/** --passWithNoTests",
+        "test:angular": "cd angular-demo && yarn test && cd ..",
+        "test:react": "cd react-demo && yarn test && cd ..",
+        "test:build": "bash ./buildTest.sh",
+        "linkscript": "bash ./link.sh",
+        "prettier": "prettier \"src/**/**.{ts,tsx,js,jsx,json,css,scss,html}\" --write",
+        "publish:package": "set npm_config_yes=true && npx -p @brightlayer-ui/publish blui-publish",
+        "tag:package": "npx -p @brightlayer-ui/tag blui-tag",
+        "start:angular": "yarn linkscript && cd angular-demo && yarn start",
+        "start:react": "yarn linkscript && cd react-demo && yarn start",
+        "lint": "eslint \"src/**/**.{tsx,ts}\"",
+        "lint:fix": "eslint \"src/**/**.{tsx,ts}\" --fix"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/brightlayer-ui/highcharts.git"
+    },
+    "dependencies": {
+        "@brightlayer-ui/colors": "^3.0.1"
+    },
+    "devDependencies": {
+        "@brightlayer-ui/eslint-config": "^2.0.5",
+        "@brightlayer-ui/prettier-config": "^1.0.3",
+        "@types/jest": "^26.0.0",
+        "@typescript-eslint/eslint-plugin": "^4.6.1",
+        "@typescript-eslint/parser": "^4.6.1",
+        "eslint": "^7.0.0",
+        "eslint-config-prettier": "^8.0.0",
+        "eslint-plugin-react": "^7.18.0",
+        "highcharts": "^9.0.0",
+        "jest": "26.6.0",
+        "prettier": "^2.0.0",
+        "ts-jest": "^26.4.3",
+        "typescript": "^4.0.0"
+    },
+    "peerDependencies": {
+        "highcharts": ">=7.2.0"
+    },
+    "keywords": [
+        "Highcharts",
+        "Visualization",
+        "Brightlayer-UI",
+        "Chart",
+        "Graph"
+    ],
+    "author": "Brightlayer UI <brightlayer-ui@eaton.com>",
+    "license": "BSD-3-Clause",
+    "bugs": {
+        "url": "https://github.com/brightlayer-ui/highchart/issues"
+    },
+    "homepage": "https://github.com/brightlayer-ui/highcharts#readme"
 }
