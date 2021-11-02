@@ -37,7 +37,7 @@ jobs:
             echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
             echo "//registry.yarnpkg.com/:_authToken=$NPM_TOKEN" >> ~/.npmrc
       - run:
-          name: Publish @pxblue/highcharts
+          name: Publish @brightlayer-ui/highcharts
           command:  |
             yarn publish:package -b $CIRCLE_BRANCH
 
@@ -49,9 +49,9 @@ jobs:
       - checkout
       - gh/setup
       - run:
-          name: Tag @pxblue/highcharts
+          name: Tag @brightlayer-ui/highcharts
           command: |
-            yarn tag:package -b $CIRCLE_BRANCH
+            yarn tag:package -b $CIRCLE_BRANCH -s highcharts
 
 workflows:
   version: 2

@@ -9,27 +9,27 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
 /*
   This file contains various elements used to style the charts.
 
-  pxblueColors: an array of pxblue 500 and 300 level colors
+  bluiColors: an array of Brightlayer UI 500 and 300 level colors
   sizes: an array of font sizes for various chart elements
 */
-import * as PXBColors from '@pxblue/colors';
+import * as BLUIColors from '@brightlayer-ui/colors';
 export const OpenSans = 'Open Sans';
 
-export const pxblueColors: string[] = [
-    PXBColors.blue[500],
-    PXBColors.red[500],
-    PXBColors.green[500],
-    PXBColors.purple[500],
-    PXBColors.orange[500],
-    PXBColors.gold[500],
-    PXBColors.yellow[500],
-    PXBColors.blue[300],
-    PXBColors.red[300],
-    PXBColors.green[300],
-    PXBColors.purple[300],
-    PXBColors.orange[300],
-    PXBColors.gold[300],
-    PXBColors.yellow[300],
+export const bluiColors: string[] = [
+    BLUIColors.blue[500],
+    BLUIColors.red[500],
+    BLUIColors.green[500],
+    BLUIColors.purple[500],
+    BLUIColors.orange[500],
+    BLUIColors.gold[500],
+    BLUIColors.yellow[500],
+    BLUIColors.blue[300],
+    BLUIColors.red[300],
+    BLUIColors.green[300],
+    BLUIColors.purple[300],
+    BLUIColors.orange[300],
+    BLUIColors.gold[300],
+    BLUIColors.yellow[300],
 ];
 
 export const sizes = {
