@@ -1,5 +1,5 @@
 /**
-Copyright (c) 2018-present, Eaton
+Copyright (c) 2021-present, Eaton
  
 All rights reserved.
  
@@ -13,7 +13,7 @@ This code is licensed under the BSD-3 license found in the LICENSE file in the r
   sample data to ensure the charts will render even when no config is supplied.
 */
 
-import { OpenSans, pxblueColors, sizes } from './styles';
+import { OpenSans, bluiColors, sizes } from './styles';
 
 import { getRandomData, sharedTooltipFormatter, sharedTimeTooltipFormatter, simpleTooltipFormatter } from './utilities';
 
@@ -99,7 +99,7 @@ export const createPieChart = ({
         series: series || [
             {
                 name: 'Browsers',
-                colors: colors || pxblueColors,
+                colors: colors || bluiColors,
                 type: 'pie',
                 data: [
                     {
@@ -184,7 +184,7 @@ export const createLineChart = ({
             },
             chart
         ),
-        colors: colors || pxblueColors,
+        colors: colors || bluiColors,
         credits: {
             enabled: false,
         },
@@ -306,7 +306,7 @@ export const createBarChart = ({
         },
         chart
     ),
-    colors: colors || pxblueColors,
+    colors: colors || bluiColors,
     credits: {
         enabled: false,
     },
@@ -496,7 +496,7 @@ export const createDonutChart = ({
             {
                 name: 'Browsers',
                 showInLegend: false,
-                colors: colors || pxblueColors,
+                colors: colors || bluiColors,
                 type: 'pie',
                 data: [
                     {

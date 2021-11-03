@@ -5,8 +5,8 @@
     "dependencies": {
         "@material-ui/core": "^4.11.0",
         "@material-ui/icons": "^4.9.1",
-        "@pxblue/colors": "^3.0.0",
-        "@pxblue/highcharts": "^2.1.0-beta.0",
+        "@brightlayer-ui/colors": "^3.0.1",
+        "@brightlayer-ui/highcharts": "^2.1.0-beta.0",
         "@pxblue/icons-mui": "^2.2.1",
         "@pxblue/react-themes": "^6.0.0",
         "@testing-library/jest-dom": "^5.11.4",
@@ -56,8 +56,8 @@
         ]
     },
     "devDependencies": {
-        "@pxblue/eslint-config": "^2.0.4",
-        "@pxblue/prettier-config": "^1.0.2",
+        "@brightlayer-ui/eslint-config": "^2.0.5",
+        "@brightlayer-ui/prettier-config": "^1.0.3",
         "@types/jest": "^26.0.15",
         "@types/node": "^12.0.0",
         "@types/react": "^17.0.0",
@@ -72,5 +72,5 @@
         "jest": "26.6.0",
         "prettier": "^2.1.2"
     },
-    "prettier": "@pxblue/prettier-config"
+    "prettier": "@brightlayer-ui/prettier-config"
 }
