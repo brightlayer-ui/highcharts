@@ -26,8 +26,8 @@
         "@angular/platform-browser-dynamic": "~11.2.7",
         "@angular/router": "~11.2.7",
         "@pxblue/angular-themes": "^6.0.1",
-        "@pxblue/colors": "^3.0.0",
-        "@pxblue/highcharts": "^2.1.0-beta.0",
+        "@brightlayer-ui/colors": "^3.0.1",
+        "@brightlayer-ui/highcharts": "^2.1.0-beta.0",
         "angular-highcharts": "^11.3.1",
         "highcharts": "^9.0.1",
         "rxjs": "~6.6.0",
@@ -39,8 +39,8 @@
         "@angular-devkit/build-angular": "~0.1102.6",
         "@angular/cli": "~11.2.6",
         "@angular/compiler-cli": "~11.2.7",
-        "@pxblue/eslint-config": "^2.0.4",
-        "@pxblue/prettier-config": "^1.0.2",
+        "@brightlayer-ui/eslint-config": "^2.0.5",
+        "@brightlayer-ui/prettier-config": "^1.0.3",
         "@types/jasmine": "~3.6.0",
         "@types/node": "^12.11.1",
         "@typescript-eslint/eslint-plugin": "^4.5.0",
@@ -60,5 +60,5 @@
         "ts-node": "~8.3.0",
         "typescript": "~4.1.5"
     },
-    "prettier": "@pxblue/prettier-config"
+    "prettier": "@brightlayer-ui/prettier-config"
 }

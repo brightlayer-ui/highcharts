@@ -4,15 +4,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Chart } from 'angular-highcharts';
 
-import { createLineChart, createBarChart, createPieChart, createDonutChart } from '@pxblue/highcharts';
-import * as PXBColors from '@pxblue/colors';
+import { createLineChart, createBarChart, createPieChart, createDonutChart } from '@brightlayer-ui/highcharts';
+import * as BLUIColors from '@brightlayer-ui/colors';
 
 const mainConfig = {
-    colors: [PXBColors.blue[900], PXBColors.blue[500], PXBColors.blue[200]],
+    colors: [BLUIColors.blue[900], BLUIColors.blue[500], BLUIColors.blue[200]],
 };
 
 const lineConfig = {
-    colors: [PXBColors.blue[500], PXBColors.blue[200], PXBColors.blue[200]],
+    colors: [BLUIColors.blue[500], BLUIColors.blue[200], BLUIColors.blue[200]],
 };
 
 @Component({

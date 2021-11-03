@@ -1,6 +1,6 @@
 {
     "name": "@brightlayer-ui/highcharts",
-    "version": "2.1.0-beta.0",
+    "version": "2.1.0",
     "description": "Base configurations for assorted HighCharts graph types for Brightlayer UI.",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
