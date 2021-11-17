@@ -1168,10 +1168,10 @@
   optionalDependencies:
     eslint-plugin-react "^7.16.0"
 
-"@brightlayer-ui/highcharts@^2.1.0-beta.0":
-  version "2.1.0-beta.0"
-  resolved "https://registry.yarnpkg.com/@brightlayer-ui/highcharts/-/highcharts-2.1.0-beta.0.tgz#ef9c7ba65899f5844926822bc44f01e6899d5f0a"
-  integrity sha512-2UvleFg96PmVrC6TH+hbGTgjGhxQxmAqzWYauVgmx+t+2VF2jLOcR8R9ZKdSrvx6W2fVfFHEmpvzwsIL9Xhadg==
+"@brightlayer-ui/highcharts@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/highcharts/-/highcharts-2.1.0.tgz#4fa94048d5b5fe8614f2c7a208a5aa343a0cb4e9"
+  integrity sha512-f2SdRUzwRJrhD4Jiba5fVxiYQlTynAAWgDUWcn+J0OL/JOl9yW4qq1lId2GPs+RFp8UzMaCt5C7JVGSc8y/5lw==
   dependencies:
     "@brightlayer-ui/colors" "^3.0.1"
 

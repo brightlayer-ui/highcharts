@@ -6,7 +6,7 @@
         "@material-ui/core": "^4.11.0",
         "@material-ui/icons": "^4.9.1",
         "@brightlayer-ui/colors": "^3.0.1",
-        "@brightlayer-ui/highcharts": "^2.1.0-beta.0",
+        "@brightlayer-ui/highcharts": "^2.1.0",
         "@brightlayer-ui/icons-mui": "^2.2.1",
         "@brightlayer-ui/react-themes": "^6.0.0",
         "@testing-library/jest-dom": "^5.11.4",
