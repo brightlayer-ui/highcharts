@@ -25,7 +25,7 @@
         "@angular/platform-browser": "~11.2.7",
         "@angular/platform-browser-dynamic": "~11.2.7",
         "@angular/router": "~11.2.7",
-        "@pxblue/angular-themes": "^6.0.1",
+        "@brightlayer-ui/angular-themes": "^6.0.1",
         "@brightlayer-ui/colors": "^3.0.1",
         "@brightlayer-ui/highcharts": "^2.1.0-beta.0",
         "angular-highcharts": "^11.3.1",

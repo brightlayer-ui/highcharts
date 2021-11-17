@@ -3,7 +3,7 @@ import 'react-app-polyfill/stable';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { CssBaseline, ThemeProvider, createMuiTheme } from '@material-ui/core';
-import * as PXBThemes from '@pxblue/react-themes';
+import * as BLUIThemes from '@brightlayer-ui/react-themes';
 import 'typeface-open-sans';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
@@ -11,7 +11,7 @@ import './index.css';
 
 ReactDOM.render(
     <React.StrictMode>
-        <ThemeProvider theme={createMuiTheme(PXBThemes.blue)}>
+        <ThemeProvider theme={createMuiTheme(BLUIThemes.blue)}>
             <CssBaseline />
             <App />
         </ThemeProvider>

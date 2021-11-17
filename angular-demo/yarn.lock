@@ -1143,7 +1143,15 @@
     lodash "^4.17.19"
     to-fast-properties "^2.0.0"
 
-"@brightlayer-ui/colors@^3.0.1":
+"@brightlayer-ui/angular-themes@^6.0.1":
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/@brightlayer-ui/angular-themes/-/angular-themes-6.3.0.tgz#b15eba57e05fd39beff09435c99ae7892d1d0e72"
+  integrity sha512-lrCyQTBtaPvqb66kq1Bzwg3777zsVeyIQxPpn9MnzO9uzhlM/xLlkoZU2GCjhZYTxAUfGwxi22Ukxt7kNL8tGQ==
+  dependencies:
+    "@brightlayer-ui/colors" "^3.0.0"
+    "@fontsource/open-sans" "^4.1.0"
+
+"@brightlayer-ui/colors@^3.0.0", "@brightlayer-ui/colors@^3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@brightlayer-ui/colors/-/colors-3.0.1.tgz#f085acf6b6b4266a01798c78bc25841d15e44b3e"
   integrity sha512-AE9F6FN1EQWMoqFTak6q8MN3wg9et2u2SUs6HjYhcS3GVSHjMWVSsuJZ2aD5Lu9409Gfi6pBHDWsJZ5PyeLsdQ==
@@ -1306,26 +1314,6 @@
     infer-owner "^1.0.4"
     node-gyp "^7.1.0"
     read-package-json-fast "^2.0.1"
-
-"@pxblue/angular-themes@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/@pxblue/angular-themes/-/angular-themes-6.0.1.tgz#706b7297a35aa47d6ded39311aeb8eaaaa557e25"
-  integrity sha512-Coc0SD5bMz8dw7AV7njZeEvHas8YIgyNbuFw7s4cdaFclD/AGh5Ca45LeOZZFTlHycglNAxUto6sU4BZpWkSLA==
-  dependencies:
-    "@fontsource/open-sans" "^4.1.0"
-    "@pxblue/colors" "^3.0.0"
-
-"@pxblue/colors@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/colors/-/colors-3.0.0.tgz#080fb5cfd5a08fea018ece7cac8022ed38f7878f"
-  integrity sha512-rMFW4an1V9M5KX4BiNzrbbaYe2fic4o9iGL8/bPYvITbeiwgAapyFX0VbMIoo8XKlIbNaxyn7oWnrxzI/tp8Rw==
-  dependencies:
-    "@pxblue/types" "^2.0.0"
-
-"@pxblue/types@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@pxblue/types/-/types-2.0.0.tgz#3df970352aca5256974a10a97d75a2264bad1eba"
-  integrity sha512-rHABCqYALGjrDxdCfw/v4mFsHhE9y9+vdSD3VHfIzA3HY1g1Bp/VWwEuEXWbtj2H5n75D+jkMQZ0rTqSKY3vLw==
 
 "@schematics/angular@11.2.6":
   version "11.2.6"

@@ -42,4 +42,4 @@ Breaking changes:
 
 ### v1.0.0 (October 26, 2018)
 
--   This library has been ported from @pxblue/visualizations
+-   This library has been ported from @brightlayer-ui/brightlayer-ui

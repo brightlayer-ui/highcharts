@@ -1,11 +1,11 @@
 import React from 'react';
 
-type PXBlueSVGProps = {
+type BrightlayerUISVGProps = {
     className?: string;
     color?: string;
     size?: number;
 };
-export const PXBlueSVG: React.FC<PXBlueSVGProps> = (props) => {
+export const BrightlayerUISVG: React.FC<BrightlayerUISVGProps> = (props) => {
     const { color, size, className } = props;
     return (
         <svg viewBox={'0 0 82 82'} width={size} height={size} className={className}>
