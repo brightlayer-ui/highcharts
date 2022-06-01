@@ -1,0 +1,8 @@
+{
+    "@brightlayer-ui/colors@3.0.1": {
+        "licenses": "BSD-3-Clause",
+        "repository": "https://github.com/brightlayer-ui/colors",
+        "licenseUrl": "https://github.com/brightlayer-ui/colors/raw/master/LICENSE",
+        "parents": "@brightlayer-ui/highcharts"
+    }
+}
